@@ -7,51 +7,15 @@
         <section></section>
         
         <ul class="list-none p-0 m-0 flex lg:align-items-center text-gray-400 select-none flex-column lg:flex-row">
-            <li>
+            <li routerLink="/">
                 <a pRipple class="flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer">
                     <span>Inicio</span>
                 </a>
             </li>
-            <li>
-                <a pRipple class="flex px-0 lg:px-5 py-3 align-items-center hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer" 
-                    pStyleClass="@next" enterClass="hidden" enterActiveClass="scalein" leaveToClass="hidden" leaveActiveClass="fadeout" [hideOnOutsideClick]="true">
+            <li routerLink="/projects">
+                <a pRipple class="flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer">
                     <span>Proyectos</span>
-                    <i class="pi pi-chevron-down ml-auto lg:ml-3"></i>
                 </a>
-                <div class="lg:absolute bg-gray-800 hidden origin-top left-0 top-100 w-full">
-                    <div class="flex flex-wrap p-6">
-                        <div class="w-full lg:w-6 mb-4 lg:mb-0">
-                            <span class="block font-normal text-2xl mb-4 text-white">Products</span>
-                            <p class="line-height-3 m-0 text-gray-400">Nisl rhoncus mattis rhoncus urna. Sed enim ut sem viverra aliquet eget sit amet tellus.</p>
-                        </div>
-                        <div class="w-full lg:w-6">
-                            <div class="flex flex-wrap border-bottom-1 border-gray-700 pb-3 mb-3">
-                                <div class="px-0 lg:px-3 py-3">
-                                    <span class="text-white">Shodan</span>
-                                    <p class="text-sm text-gray-400 mt-2 mb-0 line-height-3">Porta lorem mollis aliquam ut porttitor leo a diam.</p>
-                                </div>
-                                <div class="px-0 lg:px-3 py-3">
-                                    <span class="text-white">Bastion</span>
-                                    <p class="text-sm text-gray-400 mt-2 mb-0 line-height-3">Amet purus gravida quis blandit.</p>
-                                </div>
-                                <div class="px-0 lg:px-3 py-3">
-                                    <span class="text-white">Hodly</span>
-                                    <p class="text-sm text-gray-400 mt-2 mb-0 line-height-3">Aenean vel elit scelerisque mauris.</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap">
-                                <div class="px-0 lg:px-3 py-3">
-                                    <span class="text-white">Peak</span>
-                                    <p class="text-sm text-gray-400 mt-2 mb-0 line-height-3">Feugiat pretium nibh ipsum consequat.</p>
-                                </div>
-                                <div class="px-0 lg:px-3 py-3">
-                                    <span class="text-white">Franki</span>
-                                    <p class="text-sm text-gray-400 mt-2 mb-0 line-height-3">Tristique nulla aliquet enim tortor.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </li>
 
             <li>

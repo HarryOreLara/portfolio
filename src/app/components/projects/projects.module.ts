@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
+import { FiltroCardComponent } from './filtro-card/filtro-card.component';
+import { ListProjectComponent } from './list-project/list-project.component';
 
 
 @NgModule({
   declarations: [
-    ProjectsComponent
+    ProjectsComponent,
+    FiltroCardComponent,
+    ListProjectComponent
   ],
   imports: [
     CommonModule,
