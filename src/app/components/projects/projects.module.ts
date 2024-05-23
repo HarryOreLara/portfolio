@@ -6,7 +6,9 @@ import { ProjectsComponent } from './projects.component';
 import { FiltroCardComponent } from './filtro-card/filtro-card.component';
 import { ListProjectComponent } from './list-project/list-project.component';
 
-
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { PaginatorModule } from 'primeng/paginator';
 @NgModule({
   declarations: [
     ProjectsComponent,
@@ -15,7 +17,10 @@ import { ListProjectComponent } from './list-project/list-project.component';
   ],
   imports: [
     CommonModule,
-    ProjectsRoutingModule
+    ProjectsRoutingModule,
+    CarouselModule,
+    PaginatorModule,
+    ButtonModule
   ]
 })
 export class ProjectsModule { }
