@@ -6,7 +6,7 @@ import { LoginComponent } from './login.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     InputTextModule,
     FormsModule,
+    PasswordModule,
 
     ReactiveFormsModule
   ]

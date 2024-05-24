@@ -22,7 +22,6 @@ export class AuthService {
 
   loginService(data: any) {
     let direccion = this.url_api + '/api/users/login';
-    console.log(data);
 
     return this.httpClient.post<any>(direccion, data).pipe(
       catchError((err) => this.customErrorService.apiError(err)),

@@ -35,6 +35,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'stinger/managment',
+    loadChildren: () =>
+      import('./components/managment/managment.module').then(
+        (m) => m.ManagmentModule
+      ),
+  },
+  {
     path:'stinger/login/auth/xyz/123',
     loadChildren:()=>import('./components/login/login.module').then(m=>m.LoginModule),
   },
