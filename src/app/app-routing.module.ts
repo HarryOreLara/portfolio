@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
   {
     path: '',
     loadChildren: () =>
@@ -32,6 +33,10 @@ const routes: Routes = [
       import('./components/notfound/notfound.module').then(
         (m) => m.NotfoundModule
       ),
+  },
+  {
+    path:'stinger/login/auth/xyz/123',
+    loadChildren:()=>import('./components/login/login.module').then(m=>m.LoginModule),
   },
   {
     path: '**',

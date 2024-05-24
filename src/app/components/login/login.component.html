@@ -1,0 +1,108 @@
+<div
+  style="
+    background: url('assets/images/blocks/signin/signin-2.jpg') no-repeat;
+    background-size: cover;
+  "
+  class="px-4 py-8 md:px-6 lg:px-8"
+>
+  <div class="flex flex-wrap">
+    <div class="w-full lg:w-6 p-4 lg:p-7">
+      <div class="text-4xl text-white font-500 mb-3">Hola!!</div>
+      <p class="text-400 text-2xl line-height-3 mt-0 mb-6">
+        Ingresa a el panel de adminsitrador
+      </p>
+      <ul class="list-none p-0 m-0">
+        <li class="flex align-items-start mb-4">
+          <div>
+            <span
+              class="flex align-items-center justify-content-center bg-purple-400"
+              style="width: 38px; height: 38px; border-radius: 10px"
+            >
+              <i class="text-xl text-white pi pi-inbox"></i>
+            </span>
+          </div>
+          <div class="ml-3">
+            <span class="font-medium text-white">Gmail</span>
+            <p class="mt-2 mb-0 text-600 line-height-3">
+              harryorelara@gmail.com
+            </p>
+          </div>
+        </li>
+        <li class="flex align-items-start mb-4">
+          <div>
+            <span
+              class="flex align-items-center justify-content-center bg-purple-400"
+              style="width: 38px; height: 38px; border-radius: 10px"
+            >
+              <i class="text-xl text-white pi pi-linkedin"></i>
+            </span>
+          </div>
+          <div class="ml-3">
+            <span class="font-medium text-white">Linkedin</span>
+            <p class="mt-2 mb-0 text-600 line-height-3">
+              https://www.linkedin.com/in/harry-ore-lara-/
+            </p>
+          </div>
+        </li>
+        <li class="flex align-items-start">
+          <div>
+            <span
+              class="flex align-items-center justify-content-center bg-purple-400"
+              style="width: 38px; height: 38px; border-radius: 10px"
+            >
+              <i class="text-xl text-white pi pi-github"></i>
+            </span>
+          </div>
+          <div class="ml-3">
+            <span class="font-medium text-white">Github</span>
+            <p class="mt-2 mb-0 text-600 line-height-3">HarryOreLara</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="w-full lg:w-6 p-4 lg:p-7 bg-gray-800" >
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()" >
+      <div class="text-white text-2xl font-medium mb-6 text-right">
+        CONTÁCTAME
+      </div>
+
+      <label for="email3" class="block text-white font-medium mb-2"
+        >Email</label
+      >
+      <input
+        id="email3"
+        type="text"
+        autocomplete="off"
+        formControlName="email"
+        placeholder="Ingrese su email"
+        pInputText
+        class="w-full mb-4"
+      />
+      <label for="email3" class="block text-white font-medium mb-2"
+        >Password</label
+      >
+      <input
+        id="email3"
+        formControlName="password"
+        type="text"
+        placeholder="Ingrese su contraseña"
+        autocomplete="off"
+        pInputText
+        class="w-full mb-4"
+      />
+
+      <button
+        pButton
+        pRipple
+        label="Enviar"
+        type="submit"
+        icon="pi pi-send"
+        class="w-full p-button-secondary"
+      ></button>
+    </form>
+
+    </div>
+  </div>
+</div>
