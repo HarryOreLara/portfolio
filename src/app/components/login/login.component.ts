@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CustomErrorService } from 'src/app/core/errors/custom_error.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -15,13 +16,19 @@ export class LoginComponent {
 
   constructor(
     private  authService: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private customErrorService:CustomErrorService
   ) {}
 
   login() {
     //if (!this.loginForm.valid) return;
-    this.authService.loginService(this.loginForm.value).subscribe((res) => {
-      console.log(res);
+    this.authService.loginService(this.loginForm.value).subscribe({
+      next: (response)=>{
+        if(response && typeof response === 'string'){
+          console.log("Login exitoso");
+        }
+      },
+      error:(error)=>this.customErrorService.listError(error)
     });
   }
 }
