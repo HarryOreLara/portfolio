@@ -16,6 +16,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { RatingModule } from 'primeng/rating';
+import { ProjectService } from 'src/app/services/project.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,6 @@ import { RatingModule } from 'primeng/rating';
     
 
   ],
-  providers:[]
+  providers:[ProjectService]
 })
 export class ManagmentModule { }
