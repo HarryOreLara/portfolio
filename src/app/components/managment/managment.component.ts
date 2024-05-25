@@ -51,7 +51,7 @@ export class ManagmentComponent implements OnInit {
     this.lenguajes = ['Javascript', 'Typescript', 'C#', 'Java', 'Dart'];
   }
   registrar(event: any) {
-    //if(this.projectForm.invalid) return;
+    if(this.projectForm.invalid) return;
 
     console.log(this.projectForm.value);
 
