@@ -1,18 +1,22 @@
-<div class="bg-gray-900 px-4 py-4 md:px-6 lg:px-8">
-  <div class="text-white font-medium text-xl mb-3">Agregar Proyecto</div>
+<p-toast></p-toast>
+<p-progressSpinner
+  class="overlay"
+  strokeWidth="4"
+  *ngIf="isLoading"
+  animationDuration=".5s"
+></p-progressSpinner>
+
+<div class="bg-white px-4 py-4 md:px-6 lg:px-8">
+  <div class="font-medium text-xl mb-3">Agregar Proyecto</div>
   <p class="m-0 mb-4 p-0 text-400 line-height-3 mr-3">
     Agrega un Nuevo proyecto a tu Portafolio
   </p>
 
-  <div class="bg-gray-900 p-4 border-round">
-    <form [formGroup]="projectForm" (ngSubmit)="registrar($event)">
+  <div class="bg-white p-4 border-round">
+    <form [formGroup]="projectForm" (ngSubmit)="registrar()">
       <div class="grid formgrid p-fluid">
-
-
         <div class="field mb-4 col-12 md:col-6">
-          <label for="nickname2" class="font-medium text-white"
-            >Nombre del Proyecto</label
-          >
+          <label for="nickname2" class="font-medium">Nombre del Proyecto</label>
           <input
             id="nickname2"
             formControlName="name"
@@ -22,17 +26,15 @@
           />
         </div>
 
-        <div class="field flex  col-12 md:col-6 align-items-center justify-content-center">
-
+        <div
+          class="field flex col-12 md:col-6 align-items-center justify-content-center"
+        >
           <p-rating formControlName="valoraciones"></p-rating>
-
         </div>
 
         <div class="surface-border border-top-1 opacity-50 mb-3 col-12"></div>
         <div class="field mb-4 col-12 md:col-6">
-          <label for="bio2" class="font-medium text-white"
-            >Descripcion del proyecto</label
-          >
+          <label for="bio2" class="font-medium">Descripcion del proyecto</label>
           <textarea
             id="bio2"
             formControlName="description"
@@ -43,9 +45,10 @@
           ></textarea>
         </div>
         <div class="field mb-4 col-12 md:col-6">
-          <label for="avatar2" class="font-medium text-white"
-            >Imagen Miniatura</label
-          >
+          <label for="avatar2" class="font-medium">Imagen Miniatura</label>
+
+          <!-- <p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [maxFileSize]="1000000" (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Browse"></p-fileUpload> -->
+
           <p-fileUpload
             name="demo[]"
             url="https://www.primefaces.org/cdn/api/upload.php"
@@ -64,9 +67,7 @@
         </div>
         <div class="surface-border border-top-1 opacity-50 mb-3 col-12"></div>
         <div class="field mb-4 col-12 md:col-6">
-          <label for="due_date" class="font-medium text-white"
-            >Fecha de Creacion</label
-          >
+          <label for="due_date" class="font-medium">Fecha de Creacion</label>
           <p-calendar
             id="invoice"
             [required]="true"
@@ -78,9 +79,7 @@
         </div>
 
         <div class="field mb-4 col-12 md:col-6">
-          <label for="city2" class="font-medium text-white"
-            >Lenguaje Usado</label
-          >
+          <label for="city2" class="font-medium">Lenguaje Usado</label>
 
           <p-multiSelect
             [options]="lenguajes"
@@ -88,18 +87,15 @@
           ></p-multiSelect>
         </div>
         <div class="field mb-4 col-12 md:col-6">
-          <label for="state2" class="font-medium text-white"
-            >Tecnologia Usada</label
-          >
+          <label for="state2" class="font-medium">Tecnologia Usada</label>
           <p-multiSelect
             [options]="tecnologias"
             formControlName="tecnologias"
-
           ></p-multiSelect>
         </div>
 
         <div class="field mb-4 col-12 md:col-6">
-          <label for="avatar2" class="font-medium text-white"
+          <label for="avatar2" class="font-medium"
             >Imagenes de Referencia</label
           >
           <p-fileUpload
@@ -119,7 +115,6 @@
           </p-fileUpload>
         </div>
 
-
         <div class="surface-border border-top-1 opacity-50 mb-3 col-12"></div>
         <div class="col-12 md:col-6">
           <button
@@ -136,27 +131,3 @@
     <div class="surface-border border-top-1 opacity-50 mb-3 mt-6 col-12"></div>
   </div>
 </div>
-
-<!-- 
-<div class="field mb-4 col-12 md:col-6">
-  <label for="country2" class="font-medium text-white">Country</label>
-  <p-dropdown
-    inputId="country2"
-    optionLabel="name"
-    [filter]="true"
-    filterBy="name"
-    [showClear]="true"
-    placeholder="Select a Country"
-  >
-    <ng-template let-country pTemplate="item">
-      <div class="flex align-items-center">
-        <img
-          src="assets/images/blocks/flag/flag_placeholder.png"
-          [class]="'mr-2 flag flag-' + country.code.toLowerCase()"
-          style="width: 18px"
-        />
-        <div>{{ country.name }}</div>
-      </div>
-    </ng-template>
-  </p-dropdown>
-</div> -->

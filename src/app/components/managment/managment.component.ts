@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { UploadEvent } from 'primeng/fileupload';
+import { Subscription } from 'rxjs';
 import { CustomErrorService } from 'src/app/core/errors/custom_error.service';
 import { ProjectService } from 'src/app/services/project.service';
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 interface Options {
   name: string;
@@ -13,9 +16,11 @@ interface Options {
   selector: 'app-managment',
   templateUrl: './managment.component.html',
   styleUrls: ['./managment.component.css'],
-  providers: [MessageService],
 })
-export class ManagmentComponent implements OnInit {
+export class ManagmentComponent implements OnInit, OnDestroy {
+  private subscription: Subscription = new Subscription();
+
+  isLoading: boolean = false;
   uploadedFiles: any[] = [];
   imgUrl: any[] = [];
 
@@ -38,9 +43,11 @@ export class ManagmentComponent implements OnInit {
     imgs: [this.uploadedFiles, []],
   });
 
+
+
   constructor(
     private fb: FormBuilder,
-    private messageService: MessageService,
+    private alertService: AlertService,
     private projectService: ProjectService,
     private customErrorService: CustomErrorService
   ) {}
@@ -49,19 +56,34 @@ export class ManagmentComponent implements OnInit {
     this.tecnologias = ['Angular', 'React', 'ASP.NET', 'NestJs', 'Flutter'];
 
     this.lenguajes = ['Javascript', 'Typescript', 'C#', 'Java', 'Dart'];
+
   }
-  registrar(event: any) {
-    if(this.projectForm.invalid) return;
+
+  registrar() {
+
+
+    if (this.projectForm.invalid) return;
 
     console.log(this.projectForm.value);
-
-    this.projectService.createProjectService(this.projectForm.value).subscribe({
-      next: (res) => {
-        console.log(res);
-      },
-      error: (error) => this.customErrorService.listError(error),
-    });
+    this.subscription.add(
+      this.projectService
+        .createProjectService(this.projectForm.value)
+        .subscribe({
+          next: (res) => {
+            this.isLoading = true;
+            this.alertService.showSuccess('Exito', 'Proyecto registrado correctamente');
+          },
+          error: (error) =>{
+            this.alertService.showError('Error', 'Ups.. Algo Paso');
+          },
+          complete:()=>{
+            this.isLoading = false;
+          }
+        })
+    );
   }
+
+
 
   onUpload(event: any) {
     let numero = 0;
@@ -85,11 +107,7 @@ export class ManagmentComponent implements OnInit {
       this.uploadedFiles.push(total);
     }
 
-    this.messageService.add({
-      severity: 'info',
-      summary: 'File Uploaded',
-      detail: '',
-    });
+    this.alertService.showSuccess('Exito', 'Archivo cargado');
   }
 
   onUploadImgUrl(event: any) {
@@ -112,5 +130,11 @@ export class ManagmentComponent implements OnInit {
 
       this.imgUrl.push(total);
     }
+    this.alertService.showSuccess('Exito', 'Archivo cargado');
+
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

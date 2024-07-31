@@ -12,11 +12,15 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StyleClassModule } from 'primeng/styleclass';
 import { CalendarModule } from 'primeng/calendar';
+import { ToastModule } from 'primeng/toast';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { RatingModule } from 'primeng/rating';
 import { ProjectService } from 'src/app/services/project.service';
+import { MessageService } from 'primeng/api';
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 @NgModule({
   declarations: [
@@ -35,10 +39,12 @@ import { ProjectService } from 'src/app/services/project.service';
     ReactiveFormsModule,
     StyleClassModule,
     RatingModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ToastModule,
+    ProgressSpinnerModule
     
 
   ],
-  providers:[ProjectService]
+  providers:[ProjectService, MessageService, AlertService]
 })
 export class ManagmentModule { }
