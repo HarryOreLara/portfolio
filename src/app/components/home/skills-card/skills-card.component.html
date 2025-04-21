@@ -4,164 +4,27 @@
       <span class="text-4xl font-medium text-200">Habilidades</span>
     </div>
     <div class="grid">
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
+      <div
+        class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3"
+        *ngFor="let skill of skills"
+      >
         <div class="text-center">
           <div
             class="flex align-items-center justify-content-center mb-3 mx-auto"
             style="width: 90px; height: 90px"
           >
             <img
-              src="assets/skills/angular.svg"
+              [src]="skill.imgUrl"
               style="width: 48; height: 48"
             />
           </div>
-          <span class="text-white font-medium">ANGULAR</span>
+          <span class="text-white font-medium">{{
+            skill.name | uppercase
+          }}</span>
         </div>
       </div>
 
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img src="assets/skills/nestjs.svg" style="width: 48; height: 48" />
-          </div>
-          <span class="text-white font-medium">NEST.JS</span>
-        </div>
-      </div>
 
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/expressjs.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">EXPRESS.JS</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/flutter.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">FLUTTER</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/javascript.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">JAVASCRIPT</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/typescript.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">TYPESCRIPT</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img src="assets/skills/net.svg" style="width: 48; height: 48" />
-          </div>
-          <span class="text-white font-medium">ASP.NET</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/sqlserver.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">SQL SERVER</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/postgresql.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">POSTGRESQL</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              src="assets/skills/mongodb.svg"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">MONGO DB</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img src="assets/skills/docker.svg" style="width: 48; height: 48" />
-          </div>
-          <span class="text-white font-medium">DOCKER</span>
-        </div>
-      </div>
-      <div class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3">
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img src="assets/skills/git.svg" style="width: 48; height: 48" />
-          </div>
-          <span class="text-white font-medium">GIT</span>
-        </div>
-      </div>
     </div>
   </div>
 </div>
