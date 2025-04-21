@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CPROJECTS_CONSTANT } from 'src/app/core/constants/CProjects.constant';
 import { CSKILLS_CONSTANT } from 'src/app/core/constants/CSkills.constant';
 import { IProjects } from 'src/app/core/interfaces/IProjects.interface';
@@ -14,7 +15,9 @@ export class FiltroCardComponent implements OnInit {
   menuItems: ISkill[] = CSKILLS_CONSTANT;
   selectedItem: number = 1;
 
-  constructor() {}
+  constructor(
+    private router:Router
+  ) {}
 
   ngOnInit(): void {
     this.selectAnotherProject();
@@ -35,4 +38,12 @@ export class FiltroCardComponent implements OnInit {
       (item) => item.tecnologia.id === this.selectedItem
     ).slice(0, 3);
   }
+
+
+
+
+  goToProject(project: IProjects) {
+    this.router.navigate(['projects/one-project', project.id]);
+  }
+
 }

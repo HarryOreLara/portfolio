@@ -8,10 +8,12 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     description:
       'Sistema de venta de pasajes online para la empresa Emtrafesa, que permite a los usuarios comprar boletos de manera rápida y sencilla.',
     valoraciones: 4.5,
-    imgUrl: 'assets/projects/emtrafesa/emtrafesa_home.png',
+    imgUrl: 'assets/projects/emtrafesa/emtrafesa_home.webp',
     imgs: [
-      'https://example.com/task-manager1.jpg',
-      'https://example.com/task-manager2.jpg',
+      'assets/projects/emtrafesa/emtrafesa_home.webp',
+      'assets/projects/emtrafesa/emtrafesa_about.webp',
+      'assets/projects/emtrafesa/emtrafesa_flota.webp',
+      'assets/projects/emtrafesa/emtrafesa_sucursales.webp',
     ],
     createdAt: '2023-01-15',
     lenguaje: 'TypeScript',
@@ -20,13 +22,13 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
       name: 'Angular',
       description:
         'Framework para construir aplicaciones web de una sola página.',
-      imgUrl: 'https://example.com/angular.png',
+      imgUrl: 'https://example.com/angular.webp',
       type: TypeSkillEnum.FRONTEND,
     },
     database: 'SQL Server',
     lenguajes: ['TypeScript', 'JavaScript'],
     tecnologias: ['Angular', 'SQL Server', 'Bootstrap'],
-    icon: 'https://example.com/task-manager-icon.png',
+    icon: 'https://example.com/task-manager-icon.webp',
   },
   {
     id: 2,
@@ -34,7 +36,7 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     description:
       'Sistema de gestión administrativa para la empresa Andeskar, que permite a los usuarios gestionar sus operaciones diarias de manera eficiente.',
     valoraciones: 4.8,
-    imgUrl: 'assets/projects/andeskar/andeskar_bizlink.png',
+    imgUrl: 'assets/projects/andeskar/andeskar_bizlink.webp',
     imgs: [
       'https://example.com/e-commerce1.jpg',
       'https://example.com/e-commerce2.jpg',
@@ -46,13 +48,13 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
       name: 'Angular',
       description:
         'Framework para construir aplicaciones web de una sola página.',
-      imgUrl: 'https://example.com/angular.png',
+      imgUrl: 'https://example.com/angular.webp',
       type: TypeSkillEnum.FRONTEND,
     },
     database: 'Sql Server',
     lenguajes: ['TypeScript', 'JavaScript'],
     tecnologias: ['Angular', 'SQL Server', 'PrimeNg'],
-    icon: 'https://example.com/e-commerce-icon.png',
+    icon: 'https://example.com/e-commerce-icon.webp',
   },
   {
     id: 3,
@@ -60,7 +62,7 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     description:
       'Sistema de gestión de estudiantes para la plataforma Dicta Colombia, que permite a los usuarios gestionar sus cursos y estudiantes de manera eficiente.',
     valoraciones: 4.7,
-    imgUrl: 'assets/projects/dicta/dicta_home.png',
+    imgUrl: 'assets/projects/dicta/dicta_home.webp',
     imgs: [
       'https://example.com/social-network1.jpg',
       'https://example.com/social-network2.jpg',
@@ -72,13 +74,13 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
       name: 'Angular',
       description:
         'Framework para construir aplicaciones web de una sola página.',
-      imgUrl: 'https://example.com/angular.png',
+      imgUrl: 'https://example.com/angular.webp',
       type: TypeSkillEnum.FRONTEND,
     },
     database: 'MongoDB',
     lenguajes: ['JavaScript', 'HTML', 'CSS'],
     tecnologias: ['Express', 'Node.js', 'MongoDB'],
-    icon: 'https://example.com/social-network-icon.png',
+    icon: 'https://example.com/social-network-icon.webp',
   },
   {
     id: 4,
@@ -104,7 +106,7 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     database: 'PostgreSQL',
     lenguajes: ['TypeScript', 'JavaScript'],
     tecnologias: ['NestJS', 'PostgreSQL', 'TypeORM'],
-    icon: 'https://example.com/school-management-icon.png',
+    icon: 'https://example.com/school-management-icon.webp',
   },
   {
     id: 5,
@@ -112,7 +114,7 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     description:
       'Proyectos que reflejan mi dedicación al detalle y la excelencia técnica.',
     valoraciones: 4.9,
-    imgUrl: 'https://lucero.com.pe/wp-content/uploads/2023/03/3-11.png',
+    imgUrl: 'https://lucero.com.pe/wp-content/uploads/2023/03/3-11.webp',
     imgs: [
       'https://example.com/inventory-management1.jpg',
       'https://example.com/inventory-management2.jpg',
@@ -130,6 +132,6 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     database: 'SQL Server',
     lenguajes: ['C#', 'JavaScript'],
     tecnologias: ['ASP.NET', 'SQL Server', 'Entity Framework'],
-    icon: 'https://example.com/inventory-management-icon.png',
+    icon: 'https://example.com/inventory-management-icon.webp',
   },
 ];

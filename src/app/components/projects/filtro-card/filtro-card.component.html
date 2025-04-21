@@ -56,7 +56,7 @@
       class="col-12 md:col-6 xl:col-3 mb-5 md:mb-0"
       *ngFor="let project of projects"
     >
-      <div class="p-2  cursor-pointer">
+      <div class="p-2  cursor-pointer" (click)="goToProject(project)">
         <img [src]="project.imgUrl" class="w-full mb-3 border-round-2xl" />
         <div class="flex justify-content-end mb-3">
           <span>
