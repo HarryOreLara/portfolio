@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CEXPERIENCE_CONSTANT } from 'src/app/core/constants/CExperience.constant';
+import { IExperience } from 'src/app/core/interfaces/IExperience.interface';
 
 @Component({
   selector: 'app-about',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+
+
+
+  experiencias:IExperience[] = CEXPERIENCE_CONSTANT;
 
 }

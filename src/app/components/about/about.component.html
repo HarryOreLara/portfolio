@@ -1,175 +1,93 @@
-<div class="bg-gray-white px-4 py-8 md:px-6 lg:px-8 overflow-hidden">
+<div class="bg-gray-white px-2 py-8 md:px-4 lg:px-4 overflow-hidden">
   <div class="font-bold text-white text-7xl mb-3 text-center">
     Mi Experiencia
   </div>
   <div class="text-400 text-xl text-center mb-6 line-height-3">
     En el sector de desarrollo en multiples empresas
   </div>
-  <div class="flex lg:justify-content-center mb-5">
-    <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block">
-      <img
-        src="https://dictacolombia.com/wp-content/uploads/2022/10/logo-yellow.webp"
-        alt="Image"
-        class="w-full mr-8"
-      />
-    </div>
-    <div class="flex flex-column align-items-center w-2rem">
-      <span
-        class="bg-yellow-500 text-0 flex align-items-center justify-content-center border-circle"
-        style="min-width: 2.5rem; min-height: 2.5rem"
-        >1</span
-      >
-      <div
-        class="h-full bg-yellow-500"
-        style="width: 2px; min-height: 4rem"
-      ></div>
-    </div>
-    <div class="py-3 pl-5 lg:pl-8 pl-3 lg:w-30rem">
-      <div class="text-white text-3xl mb-2 font-medium">Dicta Colombia</div>
-      <span class="block text-yellow-500 line-height-3 mb-3"
-        >Empresa dedicada a las tendencias digitales y la educacion
-        digital</span
-      >
-      <div class="pt-3 border-top-1 border-300">
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >Se busco el posicionamiento Web de la empresa Dicta-Colombia
-            mediante SEO con un análisis exhaustivo del mercado, utilizando
-            paginas como Google ADS y Google Trends</span
-          >
-        </div>
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >Se Diseño y desarrollo nuevos módulos en la página web, buscando
-            crear un videojuego de plataforma web para mayor interactividad de
-            los usuarios finales</span
-          >
-        </div>
 
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >Se realizo prototipos 3D con el framework Angular y la librería
-            ThreeJs para el desarrollo del universo Dictariano</span
-          >
-        </div>
+  <!-- Iteramos sobre todas las experiencias -->
+  <ng-container *ngFor="let experience of experiencias; let i = index">
+    <!-- Para IDs impares (índices pares) -->
+    <div *ngIf="experience.id % 2 !== 0" class="flex lg:justify-content-center mb-5">
+      <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block">
+        <img
+          [src]="experience.imgUrl"
+          alt="Logo empresa"
+          class="w-full mr-8"
+        />
       </div>
-      <img
-        src="https://dictacolombia.com/wp-content/uploads/2022/10/logo-yellow.webp"
-        alt="Image"
-        class="w-full mt-3 block lg:hidden"
-      />
-    </div>
-  </div>
-  <div class="flex justify-content-center mb-5">
-    <div
-      class="py-3 pl-5 pr-3 lg:pr-8 lg:pl-3 lg:w-30rem flex-order-1 lg:flex-order-0"
-    >
-      <div class="text-white text-3xl mb-2 font-medium">Emtrafesa</div>
-      <span class="block text-blue-500 line-height-3 mb-3"
-        >Empresa dedicada al transporte terrestre en diferentes partes del
-        Perú</span
-      >
-      <div class="pt-3 border-top-1 border-300">
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >Desarrollador móvil para satisfacer los múltiples requerimientos
-            solicitados por las diferentes áreas usando el framework de
-            Flutter</span
-          >
-        </div>
-        <div class="mb-3 text-justify line-height-3">
-          <span class="text-white font-medium"
-            >Implementación de sistema de mensajería de colas usando RabbitMQ,
-            NodeJs y Docker</span
-          >
-        </div>
-        <div class="mb-3 text-justify line-height-3">
-          <span class="text-white font-medium"
-            >Desarrollo de la nueva página web y aplicación móvil principal de
-            la empresa, usando Angular y Flutter para su desarrollo</span
-          >
-        </div>
+      <div class="flex flex-column align-items-center w-2rem">
+        <span
+          class="bg-yellow-500 text-0 flex align-items-center justify-content-center border-circle"
+          style="min-width: 2.5rem; min-height: 2.5rem"
+          >{{i + 1}}</span
+        >
+        <div
+          class="h-full bg-yellow-500"
+          style="width: 2px; min-height: 4rem"
+        ></div>
       </div>
-      <img
-        src="https://www.emtrafesa.com/portal/wp-content/uploads/2022/02/Logos-2.0-para-web-5.png"
-        alt="Image"
-        class="w-full mt-3 block lg:hidden"
-      />
-    </div>
-    <div
-      class="flex flex-column align-items-center w-2rem flex-order-0 lg:flex-order-1"
-    >
-      <span
-        class="bg-blue-500 text-0 flex align-items-center justify-content-center border-circle"
-        style="min-width: 2.5rem; min-height: 2.5rem"
-        >2</span
-      >
-      <div
-        class="h-full bg-blue-500"
-        style="width: 2px; min-height: 4rem"
-      ></div>
-    </div>
-    <div class="py-3 pl-8 pr-3 w-30rem hidden lg:block flex-order-2">
-      <img
-        src="https://www.emtrafesa.com/portal/wp-content/uploads/2022/02/Logos-2.0-para-web-5.png"
-        alt="Image"
-        class="w-full mr-8"
-      />
-    </div>
-  </div>
-  <div class="flex lg:justify-content-center mb-5">
-    <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block">
-      <img
-        src="https://ii.ct-stc.com/3/logos/empresas/2021/08/04/27d6edddbaa04391b12c170147004thumbnail.png"
-        alt="Image"
-        class="w-full mr-8"
-      />
-    </div>
-    <div class="flex flex-column align-items-center w-2rem">
-      <span
-        class="bg-yellow-500 text-0 flex align-items-center justify-content-center border-circle"
-        style="min-width: 2.5rem; min-height: 2.5rem"
-        >3</span
-      >
-      <div
-        class="h-full bg-yellow-500"
-        style="width: 2px; min-height: 4rem"
-      ></div>
-    </div>
-    <div class="py-3 pl-5 lg:pl-8 pl-3 lg:w-30rem">
-      <div class="text-white text-3xl mb-2 font-medium">Andeskar</div>
-      <span class="block text-yellow-500 line-height-3 mb-3"
-        >Empresa dedicada al transporte terreste de carga pesada y
-        liviana.</span
-      >
-      <div class="pt-3 border-top-1 border-300">
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >Se Diseño y desarrollo un sistema completo a medida para satisfacer
-            todos los requerimentos que la empresa solicitaba</span
-          >
+      <div class="py-3 pl-5 lg:pl-8 pl-3 lg:w-30rem">
+        <div class="text-white text-3xl mb-2 font-medium">
+          {{ experience.empresa }}
         </div>
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >El sistema se migro por completo de windows forms a un sistema web
-            alojado en la nube, con el Front-End en Angular 16 y el Back-End en
-            Net Core 8.0</span
+        <span class="block text-yellow-500 line-height-3 mb-3">{{
+          experience.descripcion
+        }}</span>
+        <div class="pt-3 border-top-1 border-300">
+          <div
+            class="mb-3 line-height-3 text-justify"
+            *ngFor="let actividad of experience.actividades"
           >
+            <span class="text-white font-medium">{{ actividad }}</span>
+          </div>
         </div>
-        <div class="mb-3 line-height-3 text-justify">
-          <span class="text-white font-medium"
-            >En su despliegue se utilizo Docker y Kubernetes, facilitando su
-            despliegue en Google Cloud (GKE), asimismo para facilitar el
-            despliegue se utilizaron las buenas practicas CI/CD para utilizarlo
-            con Cloud Build</span
-          >
-        </div>
+        <img
+          [src]="experience.imgUrl"
+          alt="Logo empresa"
+          class="w-full mt-3 block lg:hidden"
+        />
       </div>
-      <img
-        src="https://ii.ct-stc.com/3/logos/empresas/2021/08/04/27d6edddbaa04391b12c170147004thumbnail.png"
-        alt="Image"
-        class="w-full mt-3 block lg:hidden"
-      />
     </div>
-  </div>
+
+    <!-- Para IDs pares (índices impares) -->
+    <div *ngIf="experience.id % 2 === 0" class="flex lg:justify-content-center mb-5">
+      <div class="py-3 pl-5 pr-3 lg:pr-8 lg:pl-3 lg:w-30rem flex-order-1 lg:flex-order-0">
+        <div class="text-white text-3xl mb-2 font-medium">{{ experience.empresa }}</div>
+        <span class="block text-blue-500 line-height-3 mb-3">{{ experience.descripcion }}</span>
+        <div class="pt-3 border-top-1 border-300">
+          <div
+            class="mb-3 line-height-3 text-justify"
+            *ngFor="let actividad of experience.actividades"
+          >
+            <span class="text-white font-medium">{{ actividad }}</span>
+          </div>
+        </div>
+        <img
+          [src]="experience.imgUrl"
+          alt="Logo empresa"
+          class="w-full mt-3 block lg:hidden"
+        />
+      </div>
+      <div class="flex flex-column align-items-center w-2rem flex-order-0 lg:flex-order-1">
+        <span
+          class="bg-blue-500 text-0 flex align-items-center justify-content-center border-circle"
+          style="min-width: 2.5rem; min-height: 2.5rem"
+          >{{i + 1}}</span
+        >
+        <div
+          class="h-full bg-blue-500"
+          style="width: 2px; min-height: 4rem"
+        ></div>
+      </div>
+      <div class="py-3 pl-8 pr-3 w-30rem hidden lg:block flex-order-2">
+        <img
+          [src]="experience.imgUrl"
+          alt="Logo empresa"
+          class="w-full mr-8"
+        />
+      </div>
+    </div>
+  </ng-container>
 </div>
