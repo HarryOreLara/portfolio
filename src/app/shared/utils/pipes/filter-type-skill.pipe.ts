@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { TypeSkillEnum } from '../enum/type-skill.enum';
-import { IProjects } from 'src/app/core/interfaces/IProjects.interface';
 import { ISkill } from 'src/app/core/interfaces/ISkill.interface';
 
 @Pipe({

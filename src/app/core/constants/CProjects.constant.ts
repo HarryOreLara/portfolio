@@ -85,7 +85,8 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     name: 'Sistema de Gestión Escolar',
     description: 'Construyendo el futuro a través del desarrollo de software.',
     valoraciones: 4.6,
-    imgUrl: 'https://chayxe.vn/wp-content/uploads/2023/02/yamaha-yzf-r7-2023-ra-mat-voi-mau-trang-cuc-ngau-chayxe-vn-3.jpg',
+    imgUrl:
+      'https://chayxe.vn/wp-content/uploads/2023/02/yamaha-yzf-r7-2023-ra-mat-voi-mau-trang-cuc-ngau-chayxe-vn-3.jpg',
     imgs: [
       'https://example.com/school-management1.jpg',
       'https://example.com/school-management2.jpg',
@@ -93,12 +94,12 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     createdAt: '2023-05-15',
     lenguaje: 'TypeScript',
     tecnologia: {
-      id: 1,
-      name: 'Angular',
+      id: 2,
+      name: 'NestJs',
       description:
-        'Framework para construir aplicaciones web de una sola página.',
-      imgUrl: 'https://example.com/angular.png',
-      type: TypeSkillEnum.FRONTEND,
+        'Framework para construir aplicaciones del lado del servidor con TypeScript.',
+      imgUrl: 'assets/skills/nestjs.svg',
+      type: TypeSkillEnum.BACKEND,
     },
     database: 'PostgreSQL',
     lenguajes: ['TypeScript', 'JavaScript'],

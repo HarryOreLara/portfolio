@@ -14,14 +14,12 @@ export class FiltroCardComponent implements OnInit {
   menuItems: ISkill[] = CSKILLS_CONSTANT;
   selectedItem: number = 1;
 
-  first = 0;
-
-  rows = 10;
   constructor() {}
 
   ngOnInit(): void {
     this.selectAnotherProject();
   }
+
 
   selectAnotherProject(project?: ISkill) {
     const projectId = project?.id ?? 1;
@@ -31,15 +29,10 @@ export class FiltroCardComponent implements OnInit {
     ).slice(0, 3);
   }
 
-  next() {
-    this.first = this.first + this.rows;
-  }
-
-  prev() {
-    this.first = this.first - this.rows;
-  }
-
   reset() {
-    this.first = 0;
+    this.selectedItem = 1;
+    this.projects = CPROJECTS_CONSTANT.filter(
+      (item) => item.tecnologia.id === this.selectedItem
+    ).slice(0, 3);
   }
 }
