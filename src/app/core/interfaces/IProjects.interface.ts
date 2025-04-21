@@ -14,4 +14,7 @@ export interface IProjects{
     lenguajes?:string[];
     tecnologias?:string[];
     icon?:string;
+    impacto?:string[];
+    retosSuperados?:string[];
+    link?:string;
 }

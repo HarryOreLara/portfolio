@@ -22,11 +22,12 @@
         style="background: rgba(255, 255, 255, 0.9)"
       >
         <div class="text-black-alpha-90 text-3xl font-bold mb-4">
-          {{project.name}}
+          {{ project.name }}
         </div>
         <p class="text-black-alpha-60 text-xl line-height-3">
-            {{project.description}}
+          {{ project.description }}
         </p>
+
         <a
           tabindex="0"
           class="cursor-pointer text-black-alpha-90 text-2xl font-medium mt-3 mb-2 py-3 flex justify-content-between w-full border-black-alpha-10 border-bottom-1 hover:text-black-alpha-60 transition-duration-150"
@@ -35,7 +36,7 @@
           enterActiveClass="slidedown"
           leaveToClass="hidden"
           leaveActiveClass="slideup"
-          >Eu non diam phasellus<i class="pi pi-fw pi-plus text-3xl"></i
+          >Impacto del sistema<i class="pi pi-fw pi-plus text-3xl"></i
         ></a>
         <div
           class="overflow-hidden transition-all transition-duration-400 transition-ease-in-out"
@@ -43,24 +44,10 @@
           <ul class="list-none">
             <li
               class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
+              *ngFor="let impacto of project.impacto"
             >
               <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Vulputate eu scelerisque felis imperdiet proin. Eget arcu dictum
-              varius duis at consectetur lorem donec.
-            </li>
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center my-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Hendrerit gravida rutrum quisque non tellus. Tempus egestas sed
-              sed risus pretium quam.
-            </li>
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center my-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Vestibulum morbi blandit cursus risus at ultrices mi tempus
-              imperdiet. Vulputate enim nulla aliquet porttitor lacus.
+              >{{ impacto }}
             </li>
           </ul>
         </div>
@@ -72,7 +59,7 @@
           enterActiveClass="slidedown"
           leaveToClass="hidden"
           leaveActiveClass="slideup"
-          >Nulla facilisi morbi<i class="pi pi-fw pi-plus text-3xl"></i
+          >Tecnologias Utilizadas<i class="pi pi-fw pi-plus text-3xl"></i
         ></a>
         <div
           class="overflow-hidden hidden transition-all transition-duration-400 transition-ease-in-out"
@@ -80,24 +67,10 @@
           <ul class="list-none">
             <li
               class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
+              *ngFor="let tecnologia of project.tecnologias"
             >
               <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Vulputate eu scelerisque felis imperdiet proin. Eget arcu dictum
-              varius duis at consectetur lorem donec.
-            </li>
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center my-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Hendrerit gravida rutrum quisque non tellus. Tempus egestas sed
-              sed risus pretium quam.
-            </li>
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center my-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Vestibulum morbi blandit cursus risus at ultrices mi tempus
-              imperdiet. Vulputate enim nulla aliquet porttitor lacus.
+              >{{ tecnologia }}
             </li>
           </ul>
         </div>
@@ -109,7 +82,31 @@
           enterActiveClass="slidedown"
           leaveToClass="hidden"
           leaveActiveClass="slideup"
-          >Tortor id aliquet lectus<i class="pi pi-fw pi-plus text-3xl"></i
+          >Retos Superados<i class="pi pi-fw pi-plus text-3xl"></i
+        ></a>
+        <div
+          class="overflow-hidden hidden transition-all transition-duration-400 transition-ease-in-out"
+        >
+          <ul class="list-none">
+            <li
+              class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
+              *ngFor="let reto of project.retosSuperados"
+            >
+              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
+              >{{ reto }}
+            </li>
+          </ul>
+        </div>
+
+        <a
+          tabindex="0"
+          class="cursor-pointer text-black-alpha-90 text-2xl font-medium mb-2 py-3 flex justify-content-between w-full border-black-alpha-10 border-bottom-1 hover:text-black-alpha-60 transition-duration-150"
+          pStyleClass="@next"
+          enterClass="hidden"
+          enterActiveClass="slidedown"
+          leaveToClass="hidden"
+          leaveActiveClass="slideup"
+          >Demo | Link<i class="pi pi-fw pi-plus text-3xl"></i
         ></a>
         <div
           class="overflow-hidden hidden transition-all transition-duration-400 transition-ease-in-out"
@@ -119,22 +116,7 @@
               class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
             >
               <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Vulputate eu scelerisque felis imperdiet proin. Eget arcu dictum
-              varius duis at consectetur lorem donec.
-            </li>
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center my-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Hendrerit gravida rutrum quisque non tellus. Tempus egestas sed
-              sed risus pretium quam.
-            </li>
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center my-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >Vestibulum morbi blandit cursus risus at ultrices mi tempus
-              imperdiet. Vulputate enim nulla aliquet porttitor lacus.
+              >{{ project.link }}
             </li>
           </ul>
         </div>

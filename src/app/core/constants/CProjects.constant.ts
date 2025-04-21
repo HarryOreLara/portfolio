@@ -29,6 +29,18 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     lenguajes: ['TypeScript', 'JavaScript'],
     tecnologias: ['Angular', 'SQL Server', 'Bootstrap'],
     icon: 'https://example.com/task-manager-icon.webp',
+    impacto: [
+      'Aumento del 30% en las ventas online en el primer mes de implementación.',
+      'Reducción del tiempo de compra en un 50%.',
+      'Mejora en la satisfacción del cliente con un aumento del 20% en las valoraciones positivas.',
+    ],
+    retosSuperados: [
+      'Integración con el sistema de gestión de flota existente.',
+      'Desarrollo de un sistema de notificaciones para los usuarios.',
+      'Implementación de un sistema de seguridad robusto para proteger los datos del cliente.',
+    ],
+    link: 'https://emtrafesa.com',
+
   },
   {
     id: 2,
@@ -38,8 +50,14 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
     valoraciones: 4.8,
     imgUrl: 'assets/projects/andeskar/andeskar_bizlink.webp',
     imgs: [
-      'https://example.com/e-commerce1.jpg',
-      'https://example.com/e-commerce2.jpg',
+      'assets/projects/andeskar/andeskar_bizlink.webp',
+      'assets/projects/andeskar/andeskar_dashboard.webp',
+      'assets/projects/andeskar/andeskar_detalle_orden.webp',
+      'assets/projects/andeskar/andeskar_nueva_orden.webp',
+      'assets/projects/andeskar/andeskar_nueva_trayectoria.webp',
+      'assets/projects/andeskar/andeskar_ordenes_individuales.webp',
+      'assets/projects/andeskar/andeskar_pagos.webp',
+      'assets/projects/andeskar/andeskar_pdf_orden.webp',
     ],
     createdAt: '2022-11-10',
     lenguaje: 'TypeScript',

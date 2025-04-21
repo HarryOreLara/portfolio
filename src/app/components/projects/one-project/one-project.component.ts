@@ -56,25 +56,6 @@ export class OneProjectComponent implements OnInit {
       {label: 'Large', value: 'L'}
   ];
 
-  this.images1 = [
-      'product-overview-2-1.png',
-      'product-overview-2-2.png',
-      'product-overview-2-3.png',
-      'product-overview-2-4.png'
-  ];
-
-  this.images2 = [
-      'product-overview-3-1.png',
-      'product-overview-3-2.png',
-      'product-overview-3-3.png',
-      'product-overview-3-4.png'
-  ];
-
-  this.galleriaImages = [
-      'product-overview-4-1.png',
-      'product-overview-4-2.png',
-      'product-overview-4-3.png'
-  ];
 
 
     this.route.params.subscribe((params) => {
