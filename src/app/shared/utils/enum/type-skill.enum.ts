@@ -1,0 +1,11 @@
+export enum TypeSkillEnum {
+    FRONTEND = 'FRONTEND',
+    BACKEND = 'BACKEND',
+    LENGUAJE = 'LENGUAJE',
+    FRAMEWORK = 'FRAMEWORK',
+    MOBILE = 'MOBILE',
+    DEVOPS = 'DEVOPS',
+    DATABASE = 'DATABASE',
+    LIBRERIA = 'LIBRERIA',
+    OTHER = 'OTHER',
+}

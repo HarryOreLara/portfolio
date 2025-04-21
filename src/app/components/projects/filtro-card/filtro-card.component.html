@@ -15,50 +15,50 @@
             >DESARROLLO</span
           >
           <ul class="list-none p-0 mt-3 mb-0 mx-0">
-            <li class="mb-2" *ngFor="let item of menuItems" >
+            <li class="mb-2" *ngFor="let item of menuItems | filterTypeSkill ; let i = index">
               <a
                 tabindex="0"
-                (click)="showProjects(item.name)"
+                (click)="selectAnotherProject(item)"
+                [ngClass]="{ 'active-item': selectedItem === item.id }"
                 class="block cursor-pointer text-xl text-white-alpha-70 font-medium px-3 py-2 bg-transparent hover:bg-white-alpha-30 transition-colors transition-duration-150 border-round"
                 >{{ item.name }}</a
               >
             </li>
           </ul>
 
-
-          <div class="flex align-content-between justify-content-between mt-6 align-items-center align-self-center">
-            <p-button 
-                type="button" 
-                icon="pi pi-chevron-left" 
-                (click)="prev()" 
-                styleClass="p-button-text text-white font-bold text-2xl" />
-            <p-button 
-                type="button" 
-                icon="pi pi-refresh" 
-                (click)="reset()" 
-                styleClass="p-button-text text-white font-bold text-2xl" />
-            <p-button 
-                type="button" 
-                icon="pi pi-chevron-right" 
-                (click)="next()" 
-                
-                styleClass="p-button-text text-white font-bold text-2xl" />
+          <div
+            class="flex align-content-between justify-content-between mt-6 align-items-center align-self-center"
+          >
+            <p-button
+              type="button"
+              icon="pi pi-chevron-left"
+              (click)="prev()"
+              styleClass="p-button-text text-white font-bold text-2xl"
+            />
+            <p-button
+              type="button"
+              icon="pi pi-refresh"
+              (click)="reset()"
+              styleClass="p-button-text text-white font-bold text-2xl"
+            />
+            <p-button
+              type="button"
+              icon="pi pi-chevron-right"
+              (click)="next()"
+              styleClass="p-button-text text-white font-bold text-2xl"
+            />
+          </div>
         </div>
-
-        </div>
-
-
       </div>
     </div>
 
-    <div class="col-12 md:col-6 xl:col-3 mb-5 md:mb-0" *ngFor="let project of projects">
-      <div class="p-2">
-        <img
-          src="https://lucero.com.pe/wp-content/uploads/2023/03/3-11.png"
-          class="w-full mb-3 border-round-2xl"
-        />
+    <div
+      class="col-12 md:col-6 xl:col-3 mb-5 md:mb-0"
+      *ngFor="let project of projects"
+    >
+      <div class="p-2  cursor-pointer">
+        <img [src]="project.imgUrl" class="w-full mb-3 border-round-2xl" />
         <div class="flex justify-content-end mb-3">
-
           <span>
             <i class="pi pi-star-fill text-yellow-500 mr-1"></i>
             <i class="pi pi-star-fill text-yellow-500 mr-1"></i>
@@ -67,14 +67,13 @@
             <i class="pi pi-star-fill text-300"></i>
           </span>
         </div>
-        <div class="text-white text-xl mb-3">{{project.name}}</div>
+        <div class="text-white text-xl mb-3">{{ project.name }}</div>
         <div>
-          <span class="text-xl font-medium text-white-alpha-40">{{project.description}}</span>
-
+          <span class="text-xl font-medium text-white-alpha-40">{{
+            project.description
+          }}</span>
         </div>
       </div>
     </div>
-
   </div>
 </div>
-

@@ -1,5 +1,7 @@
+import { ISkill } from "./ISkill.interface";
+
 export interface IProjects{
-    id:string;
+    id:number;
     name:string;
     description:string;
     valoraciones?:number;
@@ -7,7 +9,7 @@ export interface IProjects{
     imgs?:string[];
     createdAt:string;
     lenguaje:string;
-    tecnologia:string;
+    tecnologia:ISkill;
     database?:string;
     lenguajes?:string[];
     tecnologias?:string[];

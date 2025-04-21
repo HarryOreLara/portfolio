@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CMENU_PROJECT_CONSTANT } from 'src/app/core/constants/CMenuProjects.constant';
 import { CPROJECTS_CONSTANT } from 'src/app/core/constants/CProjects.constant';
-import { IMenuProject } from 'src/app/core/interfaces/IMenuProjects.interface';
+import { CSKILLS_CONSTANT } from 'src/app/core/constants/CSkills.constant';
 import { IProjects } from 'src/app/core/interfaces/IProjects.interface';
+import { ISkill } from 'src/app/core/interfaces/ISkill.interface';
 
 @Component({
   selector: 'app-filtro-card',
@@ -10,30 +10,36 @@ import { IProjects } from 'src/app/core/interfaces/IProjects.interface';
   styleUrls: ['./filtro-card.component.css'],
 })
 export class FiltroCardComponent implements OnInit {
-  projects: IProjects[] = CPROJECTS_CONSTANT;
-  menuItems: IMenuProject[] = CMENU_PROJECT_CONSTANT;
-
+  projects: IProjects[] = [];
+  menuItems: ISkill[] = CSKILLS_CONSTANT;
+  selectedItem: number = 1;
 
   first = 0;
 
   rows = 10;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.selectAnotherProject();
+  }
 
-  showProjects(id: any) {
-    console.log(id);
+  selectAnotherProject(project?: ISkill) {
+    const projectId = project?.id ?? 1;
+    this.selectedItem = projectId;
+    this.projects = CPROJECTS_CONSTANT.filter(
+      (item) => item.tecnologia.id === projectId
+    ).slice(0, 3);
   }
 
   next() {
     this.first = this.first + this.rows;
-}
+  }
 
-prev() {
+  prev() {
     this.first = this.first - this.rows;
-}
+  }
 
-reset() {
+  reset() {
     this.first = 0;
-}
+  }
 }

@@ -1,4 +1,4 @@
 export interface IMenuProject{
-    id:string;
+    id:number;
     name:string;
 }
