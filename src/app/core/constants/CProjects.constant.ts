@@ -92,7 +92,8 @@ export const CPROJECTS_CONSTANT: IProjects[] = [
       'Reducción del tiempo de procesamiento de órdenes en un 30%.',
       'Facilitación de la gestión de operaciones diarias desde una sola plataforma.',
       'Reducción de errores humanos al automatizar el proceso de gestión de órdenes.',
-      'Aumento de la visibilidad de la empresa al ofrecer un servicio moderno y accesible.',
+      'Se dejo de lado el sistema en windows forms y se implemento un sistema web que permite la gestión de operaciones desde cualquier lugar y en cualquier momento.',
+      'Se implemento la facturacion de guias y comprobantes electronicos de manera automatica.',
     ],
     retosSuperados: [
       'Integracion con RENIEC para la validación de datos de clientes.',

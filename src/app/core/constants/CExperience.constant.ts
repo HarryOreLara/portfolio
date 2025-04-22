@@ -8,8 +8,8 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     descripcion:
       'Empresa dedicada a las tendencias digitales y la educacion digital.',
     puesto: 'Desarrollador y supervisor de Proyectos',
-    fechaInicio: new Date('2022-01-01'),
-    fechaFin: new Date('2023-01-01'),
+    fechaInicio: new Date('2023-03-30'),
+    fechaFin: new Date(),
     imgUrl:
       'https://dictacolombia.com/wp-content/uploads/2022/10/logo-yellow.webp',
     actividades: [
@@ -36,8 +36,8 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     descripcion:
       'Empresa dedicada al transporte de pasajeros y encomiendas en todo el pais.',
     puesto: 'Desarrollador Junior',
-    fechaInicio: new Date('2021-01-01'),
-    fechaFin: new Date('2022-01-01'),
+    fechaInicio: new Date('2023-07-11'),
+    fechaFin: new Date(),
     imgUrl:
       'https://www.emtrafesa.com/portal/wp-content/uploads/2022/02/Logos-2.0-para-web-5.png',
     actividades: [
@@ -64,8 +64,8 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     rubro: 'Transporte de Encomiendas',
     descripcion:
       'Empresa dedicada al transporte de encomiendas y carga en todo el pais.',
-    fechaInicio: new Date('2020-01-01'),
-    fechaFin: new Date('2021-01-01'),
+    fechaInicio: new Date('2024-06-01'),
+    fechaFin: new Date(),
     imgUrl:
       'https://ii.ct-stc.com/3/logos/empresas/2021/08/04/27d6edddbaa04391b12c170147004thumbnail.png',
     puesto: 'Desarrollador Frontend',

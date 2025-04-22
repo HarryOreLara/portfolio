@@ -7,23 +7,21 @@ import { CPROJECTS_CONSTANT } from 'src/app/core/constants/CProjects.constant';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  // features = [
-  //   {
-  //     title: 'Unlimited Inbox',
-  //     image: 'live-collaboration.svg',
-  //     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  //   },
-  //   {
-  //     title: 'Data Security',
-  //     image: 'security.svg',
-  //     text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  //   },
-  //   {
-  //     title: 'Cloud Backup Williams',
-  //     image: 'subscribe.svg',
-  //     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-  //   },
-  // ];
+  features = CPROJECTS_CONSTANT;
 
-  features = CPROJECTS_CONSTANT
+  openGmail() {
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=harryorelara@gmail.com", "_blank");
+  }
+
+  openLinkedIn() {
+    window.open('https://www.linkedin.com/in/harry-ore-lara-/', '_blank');
+  }
+
+  openGithub() {
+    window.open('https://github.com/harryorelara', '_blank');
+  }
+
+  openWhatsapp() {
+    window.open('https://wa.me/51906601846', '_blank');
+  }
 }

@@ -9,19 +9,18 @@
   <!-- Iteramos sobre todas las experiencias -->
   <ng-container *ngFor="let experience of experiencias; let i = index">
     <!-- Para IDs impares (índices pares) -->
-    <div *ngIf="experience.id % 2 !== 0" class="flex lg:justify-content-center mb-5">
+    <div
+      *ngIf="experience.id % 2 !== 0"
+      class="flex lg:justify-content-center mb-5"
+    >
       <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block">
-        <img
-          [src]="experience.imgUrl"
-          alt="Logo empresa"
-          class="w-full mr-8"
-        />
+        <img [src]="experience.imgUrl" alt="Logo empresa" class="w-full mr-8" />
       </div>
       <div class="flex flex-column align-items-center w-2rem">
         <span
           class="bg-yellow-500 text-0 flex align-items-center justify-content-center border-circle"
           style="min-width: 2.5rem; min-height: 2.5rem"
-          >{{i + 1}}</span
+          >{{ i + 1 }}</span
         >
         <div
           class="h-full bg-yellow-500"
@@ -34,6 +33,11 @@
         </div>
         <span class="block text-yellow-500 line-height-3 mb-3">{{
           experience.descripcion
+        }}</span>
+        <span class="block text-green-500 line-height-3 mb-3">{{
+          (experience.fechaInicio | date : "dd/MM/yyyy" : "UTC-05:00") +
+            " - " +
+            (experience.fechaFin | date : "dd/MM/yyyy" : "UTC-05:00")
         }}</span>
         <div class="pt-3 border-top-1 border-300">
           <div
@@ -52,10 +56,24 @@
     </div>
 
     <!-- Para IDs pares (índices impares) -->
-    <div *ngIf="experience.id % 2 === 0" class="flex lg:justify-content-center mb-5">
-      <div class="py-3 pl-5 pr-3 lg:pr-8 lg:pl-3 lg:w-30rem flex-order-1 lg:flex-order-0">
-        <div class="text-white text-3xl mb-2 font-medium">{{ experience.empresa }}</div>
-        <span class="block text-blue-500 line-height-3 mb-3">{{ experience.descripcion }}</span>
+    <div
+      *ngIf="experience.id % 2 === 0"
+      class="flex lg:justify-content-center mb-5"
+    >
+      <div
+        class="py-3 pl-5 pr-3 lg:pr-8 lg:pl-3 lg:w-30rem flex-order-1 lg:flex-order-0"
+      >
+        <div class="text-white text-3xl mb-2 font-medium">
+          {{ experience.empresa }}
+        </div>
+        <span class="block text-blue-500 line-height-3 mb-3">{{
+          experience.descripcion
+        }}</span>
+        <span class="block text-green-500 line-height-3 mb-3">{{
+          (experience.fechaInicio | date : "dd/MM/yyyy" : "UTC-05:00") +
+            " - " +
+            (experience.fechaFin | date : "dd/MM/yyyy" : "UTC-05:00")
+        }}</span>
         <div class="pt-3 border-top-1 border-300">
           <div
             class="mb-3 line-height-3 text-justify"
@@ -70,11 +88,13 @@
           class="w-full mt-3 block lg:hidden"
         />
       </div>
-      <div class="flex flex-column align-items-center w-2rem flex-order-0 lg:flex-order-1">
+      <div
+        class="flex flex-column align-items-center w-2rem flex-order-0 lg:flex-order-1"
+      >
         <span
           class="bg-blue-500 text-0 flex align-items-center justify-content-center border-circle"
           style="min-width: 2.5rem; min-height: 2.5rem"
-          >{{i + 1}}</span
+          >{{ i + 1 }}</span
         >
         <div
           class="h-full bg-blue-500"
@@ -82,11 +102,7 @@
         ></div>
       </div>
       <div class="py-3 pl-8 pr-3 w-30rem hidden lg:block flex-order-2">
-        <img
-          [src]="experience.imgUrl"
-          alt="Logo empresa"
-          class="w-full mr-8"
-        />
+        <img [src]="experience.imgUrl" alt="Logo empresa" class="w-full mr-8" />
       </div>
     </div>
   </ng-container>
