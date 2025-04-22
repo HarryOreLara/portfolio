@@ -1,45 +1,40 @@
+<div class="bg-gray-900 px-4  md:px-6 lg:py-4">
+  <div class="flex flex-wrap bg-gray-900">
+    <div
+      class="w-full bg-gray-600 lg:w-6 px-4 bg-gray-900 py-8 md:px-6 lg:px-8"
+    >
+      <div class="text-6xl text-white mb-3 font-medium">Harry Ore Lara</div>
+      <p class="line-height-3 mt-0 mb-7 p-0 text-white-alpha-80 text-2xl text-justify">
+        Ingeniero de sistemas con experiencia en la construcción de aplicaciones
+        web y móviles, usando frameworks de JavaScript/TypeScript como Angular,
+        ExpressJs, NestJs. Librerias como PrimeNg, Primeflex, Angular Material,
+        StencilJs y Bootstrap para la customización de componentes, y frameworks
+        móviles como Flutter. Además, poseo conocimientos en microfrontend,
+        microservicios, websockets y despliegue de aplicaciones con Docker y
+        Kubernetes en Google Cloud y Microsoft Azure, integrando prácticas de
+        CI/CD para asegurar despliegues automatizados.
+      </p>
 
-
-<div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
-    <div class="flex flex-wrap bg-gray-900">
-      <div
-        class="w-full bg-gray-600 lg:w-6 px-4 bg-gray-900 py-8 md:px-6 lg:px-8"
-      >
-        <div class="text-6xl text-white mb-3 font-medium">Harry Ore Lara</div>
-        <p class="line-height-3 mt-0 mb-7 p-0 text-white-alpha-80 text-2xl">
-          Ingeniero de sistemas con experiencia en la construcción de aplicaciones
-          web y móviles, usando frameworks de JavaScript/TypeScript como Angular,
-          ExpressJs, NestJs. Librerias como PrimeNg, Primeflex, Angular Material,
-          StencilJs y Bootstrap para la customización de componentes, y frameworks
-          móviles como Flutter. Además, poseo conocimientos en microfrontend,
-          microservicios, websockets y despliegue de aplicaciones con Docker y
-          Kubernetes en Google Cloud y Microsoft Azure, integrando prácticas de
-          CI/CD para asegurar despliegues automatizados.
-        </p>
-  
-        <div class="flex  align-content-between justify-content-between">
-          <button
-            pButton
-            pRipple
-            routerLink="/projects"
-            label="Ver Proyectos"
-            class="bg-black-alpha-30 border-white hover:bg-white hover:text-black-alpha-90 text-2xl"
-          ></button>
-
-          <button
+      <div class="flex align-content-between justify-content-between">
+        <button
           pButton
           pRipple
-          routerLink="/"
+          routerLink="/projects"
+          label="Ver Proyectos"
+          class="bg-black-alpha-30 border-white hover:bg-white hover:text-black-alpha-90 text-2xl"
+        ></button>
+
+        <button
+          pButton
+          pRipple
+          (click)="descargarCV()"
           label="Descargar CV"
           class="bg-black-alpha-30 border-white hover:bg-white hover:text-black-alpha-90 text-2xl"
         ></button>
-        </div>
-
-
-
       </div>
-  
-      <!-- <div
+    </div>
+
+    <!-- <div
         class="hidden lg:block w-4 bg-no-repeat bg-cover h-screen "
         style="
           background: url('assets/img/itachi.png');
@@ -47,6 +42,5 @@
           height: 50px;
         "
       ></div> -->
-    </div>
   </div>
-  
+</div>
