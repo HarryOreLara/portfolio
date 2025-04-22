@@ -8,6 +8,7 @@ import{CheckboxModule} from 'primeng/checkbox'
 import {DividerModule} from 'primeng/divider'
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
+import { CarouselModule } from 'primeng/carousel';
 @NgModule({
   declarations: [
     ContactComponent
@@ -19,7 +20,8 @@ import { DropdownModule } from 'primeng/dropdown';
     ButtonModule,
     DividerModule,
     InputTextModule,
-    DropdownModule
+    DropdownModule,
+    CarouselModule
   ]
 })
 export class ContactModule { }

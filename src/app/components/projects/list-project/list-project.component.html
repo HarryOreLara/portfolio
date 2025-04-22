@@ -11,7 +11,8 @@
           *ngFor="let project of projects"
         >
           <div
-            class="mb-3 relative h-25rem border-round bg-cover bg-no-repeat"
+            class="mb-3 relative h-25rem border-round bg-cover bg-no-repeat cursor-pointer"
+            [routerLink]="['/projects/one-project', project.id]"
             style="
               background-image: url('{{ project.imgUrl }}');
             "
