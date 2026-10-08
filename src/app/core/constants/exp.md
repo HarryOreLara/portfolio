@@ -1,5 +1,4 @@
-import { IExperience } from '../interfaces/IExperience.interface';
-
+```typescript
 export const CEXPERIENCE_CONSTANT: IExperience[] = [
   {
     id: 1,
@@ -9,8 +8,8 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
       'Empresa global de servicios de tecnología, consultoría y transformación digital.',
     puesto: 'Software Engineer | Movistar | Integratell',
     fechaInicio: new Date('2026-07-01'),
-    fechaFin: new Date(),
-    imgUrl: 'https://totaltele.com/wp-content/uploads/2025/12/NTT_Data_2025.svg_.png',
+    fechaFin: new Date('2026-10-01'),
+    imgUrl: '',
     actividades: [
       'Desarrollo y mantenimiento de soluciones backend y capas de orquestación para servicios digitales de Movistar, implementadas sobre Node.js y Adobe App Builder, integrando servicios, paquetes y capacidades de Adobe dentro de una arquitectura orientada a servicios.',
       'Configuración y gestión de entornos de desarrollo mediante Adobe Developer Console y Workspaces de Adobe App Builder, incluyendo configuración de credenciales, aislamiento de ambientes y despliegue de aplicaciones mediante Adobe I/O CLI.',
@@ -40,7 +39,7 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     puesto: 'Software Engineer | Interbank | Visión 360',
     fechaInicio: new Date('2026-05-01'),
     fechaFin: new Date('2026-06-30'),
-    imgUrl: 'https://totaltele.com/wp-content/uploads/2025/12/NTT_Data_2025.svg_.png',
+    imgUrl: '',
     actividades: [
       'Desarrollo e implementación de nuevos flujos funcionales en la plataforma Visión 360, orientados a la validación de identidad mediante biometría digital para procesos de afiliación y origen de productos financieros.',
       'Integración de flujos de aprobación entre asesores, supervisores y analistas de riesgos.',
@@ -74,7 +73,7 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     puesto: 'Software Engineer | Interbank | JANUS',
     fechaInicio: new Date('2025-09-01'),
     fechaFin: new Date('2026-04-30'),
-    imgUrl: 'https://totaltele.com/wp-content/uploads/2025/12/NTT_Data_2025.svg_.png',
+    imgUrl: '',
     actividades: [
       'Desarrollo de funcionalidades en un ecosistema Angular basado en arquitectura de microfrontends para flujos de créditos hipotecarios como Mi Vivienda, Techo Propio y Ahorro Casa.',
       'Implementación y mantenimiento de flujos de creación de cotizaciones, asegurando la integración con servicios backend y la consistencia de datos.',
@@ -114,7 +113,7 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     puesto: 'Software Engineer | Interbank | ASSI Convenios',
     fechaInicio: new Date('2025-06-01'),
     fechaFin: new Date('2025-08-31'),
-    imgUrl: 'https://totaltele.com/wp-content/uploads/2025/12/NTT_Data_2025.svg_.png',
+    imgUrl: '',
     actividades: [
       'Desarrollo e integración de funcionalidades en un ecosistema Angular basado en arquitectura de microfrontends para módulos de préstamos con convenio y campañas.',
       'Implementación del seguro desgravamen cero dentro de los procesos de préstamos, asegurando la interacción entre microfrontends y la coherencia de la experiencia de usuario.',
@@ -143,7 +142,7 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     fechaInicio: new Date('2023-07-01'),
     fechaFin: new Date('2025-04-30'),
     imgUrl:
-      'https://www.emtrafesa.pe/portal/wp-content/uploads/2026/08/LOGO-ENTRAFESA-REDIM.png',
+      'https://www.emtrafesa.com/portal/wp-content/uploads/2022/02/Logos-2.0-para-web-5.png',
     actividades: [
       'Diseño, desarrollo y despliegue en producción de la nueva página web de ventas utilizando Angular 16, PrimeNG, PrimeFlex y Bootstrap 5.',
       'Integración del frontend con servicios backend desarrollados en NestJS y .NET Core 8 bajo una arquitectura basada en microservicios.',
@@ -272,3 +271,4 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     ],
   },
 ];
+```
