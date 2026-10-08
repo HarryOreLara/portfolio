@@ -8,8 +8,18 @@ import { ISkill } from 'src/app/core/interfaces/ISkill.interface';
   styleUrls: ['./skills-card.component.css']
 })
 export class SkillsCardComponent {
+  readonly featuredSkillNames = [
+    'Angular',
+    'TypeScript',
+    'NestJs',
+    'Spring Boot',
+    'Docker',
+    'Kubernetes',
+    'Azure DevOps',
+    'Microsoft Azure',
+  ];
 
-
-  skills:ISkill[] = CSKILLS_CONSTANT;
-
+  skills: ISkill[] = this.featuredSkillNames
+    .map((name) => CSKILLS_CONSTANT.find((skill) => skill.name === name))
+    .filter((skill): skill is ISkill => Boolean(skill));
 }

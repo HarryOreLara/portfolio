@@ -1,104 +1,29 @@
-<div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
-  <div class="grid grid-nogutter -mt-3 -ml-3 -mr-3">
-    <!-- Primer proyecto grande -->
-    <div class="col-12 lg:col-6 p-3 cursor-pointer">
-      <div
-        routerLink="/projects/one-project/1"
-        class="project-container flex flex-column justify-content-between h-full w-full border-round bg-no-repeat bg-cover relative overflow-hidden"
-        style="
-          background: linear-gradient(
-              0deg,
-              rgba(0, 0, 0, 0.3),
-              rgba(0, 0, 0, 0.3)
-            ),
-            url('assets/projects/emtrafesa/emtrafesa_home.webp');
-          min-height: 50rem;
-        "
-      >
-        <div class="project-image"></div>
-        <div
-          class="p-4 align-self-start backdrop-blur-sm bg-black/30 rounded transition-all duration-300 hover:backdrop-blur-md hover:bg-black/50 z-1"
-        >
-          <div class="text-white-alpha-90 text-2xl font-bold mb-2">
-            Sistema de Venta de Pasajes Online - Emtrafesa
-          </div>
-        </div>
-        <div class="p-4 align-self-end z-1">
-          <a
-            tabindex="0"
-            class="text-2xl cursor-pointer text-white flex align-items-center hover:text-white-alpha-60 transition-duration-150"
-            >Ver proyecto<i class="pi pi-fw pi-arrow-right text-2xl ml-2"></i
-          ></a>
-        </div>
-      </div>
+<section class="projects-section" aria-labelledby="projects-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Trabajo seleccionado</p>
+      <h2 id="projects-title">Productos, no solo pantallas.</h2>
+      <p>Casos donde interfaces, servicios e infraestructura resolvieron procesos reales y conectaron tecnología con objetivos de negocio.</p>
     </div>
-
-    <div class="col-12 lg:col-6">
-      <div class="grid grid-nogutter lg:flex-column">
-        <div class="col-12 p-3">
-          <div
-            routerLink="/projects/one-project/2"
-            class="project-container flex flex-column justify-content-between h-full w-full border-round bg-no-repeat bg-cover h-25rem relative overflow-hidden cursor-pointer"
-            style="
-              background: linear-gradient(0deg, #0000004d, #0000004d),
-                url('assets/projects/andeskar/andeskar_bizlink.webp');
-              background-size: cover;
-            "
-          >
-            <div class="project-image"></div>
-            <div
-              class="p-4 align-self-start backdrop-blur-sm bg-black/30 rounded transition-all duration-300 hover:backdrop-blur-md hover:bg-black/50 z-1"
-            >
-              <div class="text-white-alpha-90 text-2xl font-bold mb-2">
-                Sistema de Gestion Administrativa - Andeskar
-              </div>
-            </div>
-            <div class="p-4 align-self-end z-1">
-              <a
-                tabindex="0"
-                class="text-2xl cursor-pointer text-white flex align-items-center hover:text-white-alpha-60 transition-duration-150"
-                >Ver proyecto<i
-                  class="pi pi-fw pi-arrow-right text-2xl ml-2"
-                ></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 p-3 cursor-pointer">
-          <div
-            routerLink="/projects/one-project/3"
-            class="project-container flex flex-column justify-content-between h-full w-full border-round bg-no-repeat bg-cover h-25rem relative overflow-hidden cursor-pointer"
-            style="
-              background: linear-gradient(
-                  0deg,
-                  rgba(0, 0, 0, 0.3),
-                  rgba(0, 0, 0, 0.3)
-                ),
-                url('assets/projects/dicta/dicta_home.webp');
-              background-size: cover;
-            "
-          >
-            <div class="project-image"></div>
-            <div
-              class="p-4 align-self-start backdrop-blur-sm bg-black/30 rounded transition-all duration-300 hover:backdrop-blur-md hover:bg-black/50 z-1"
-            >
-              <div class="text-white-alpha-90 text-2xl font-bold mb-2">
-                Dicta Colombia
-              </div>
-            </div>
-            <div class="p-4 align-self-end z-1">
-              <a
-                tabindex="0"
-                class="text-2xl cursor-pointer text-white flex align-items-center hover:text-white-alpha-60 transition-duration-150"
-                >Ver proyecto<i
-                  class="pi pi-fw pi-arrow-right text-2xl ml-2"
-                ></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <a routerLink="/projects" class="view-all">Ver todos <i class="pi pi-arrow-right"></i></a>
   </div>
-</div>
+
+  <div class="projects-grid">
+    <article class="project-card" *ngFor="let project of projects; let i = index">
+      <a [routerLink]="['/projects/one-project', project.id]" class="project-image" [attr.aria-label]="'Ver caso: ' + project.name">
+        <img [src]="project.imgUrl" [alt]="'Vista de ' + project.name" loading="lazy" />
+        <span class="project-number">0{{ i + 1 }}</span>
+      </a>
+      <div class="project-body">
+        <div class="project-meta">
+          <span>{{ project.tecnologia.name }}</span>
+          <span>{{ project.lenguaje }}</span>
+          <span *ngIf="project.tecnologias?.includes('PrimeNg')">PrimeNG</span>
+        </div>
+        <h3><a [routerLink]="['/projects/one-project', project.id]">{{ project.name }}</a></h3>
+        <p>{{ project.description }}</p>
+        <a [routerLink]="['/projects/one-project', project.id]" class="case-link">Ver caso de estudio <i class="pi pi-arrow-up-right"></i></a>
+      </div>
+    </article>
+  </div>
+</section>

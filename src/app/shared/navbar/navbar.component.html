@@ -1,36 +1,29 @@
-
-<div class="bg-gray-900 py-3 px-6 shadow-2 flex align-items-center justify-content-between relative">
-    <a pRipple class="cursor-pointer block lg:hidden text-gray-400" pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
-        <i class="pi pi-bars text-4xl"></i>
+<header class="site-header">
+  <nav class="navbar" aria-label="Navegación principal">
+    <a routerLink="/" class="brand" aria-label="Ir al inicio" (click)="closeMenu()">
+      <span class="brand-mark" aria-hidden="true">HO</span>
+      <span class="brand-copy">
+        <strong>Harry Ore</strong>
+        <small>Software Developer</small>
+      </span>
     </a>
-    <div class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full bg-gray-900 left-0 top-100 px-6 lg:px-0 shadow-2 lg:shadow-none">
-        <section></section>
-        
-        <ul class="list-none p-0 m-0 flex lg:align-items-center text-gray-400 select-none flex-column lg:flex-row">
-            <li routerLink="/">
-                <a pRipple class="flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer">
-                    <span>Inicio</span>
-                </a>
-            </li>
-            <li routerLink="/projects">
-                <a pRipple class="flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer">
-                    <span>Proyectos</span>
-                </a>
-            </li>
 
-            <li routerLink="/about">
-                <a pRipple class="flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer">
-                    <span>Experiencia</span>
-                </a>
-            </li>
-            <li routerLink="/contact">
-                <a pRipple class="flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150 cursor-pointer">
-                    <span>Contáctame</span>
-                </a>
-            </li>
-        </ul>
+    <button type="button" class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-controls="main-menu" aria-label="Abrir menú">
+      <i class="pi" [ngClass]="menuOpen ? 'pi-times' : 'pi-bars'"></i>
+    </button>
+
+    <div id="main-menu" class="nav-content" [class.is-open]="menuOpen">
+      <ul class="nav-links">
+        <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="closeMenu()">Inicio</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Proyectos</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">Experiencia</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contacto</a></li>
+      </ul>
+
+      <a class="nav-cta" href="mailto:harryorelara@gmail.com">
+        <span class="status-dot" aria-hidden="true"></span>
+        Disponible para conversar
+      </a>
     </div>
-</div>
-
-
-
+  </nav>
+</header>

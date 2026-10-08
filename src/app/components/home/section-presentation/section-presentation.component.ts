@@ -6,15 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./section-presentation.component.css']
 })
 export class SectionPresentationComponent {
-
-
-  descargarCV() {
-    const link = document.createElement('a');
-    link.href = 'assets/cv/CV_ORE_LARA.pdf'; 
-    link.download = 'Harry_Ore_Lara_CV.pdf'; 
-    link.target = '_blank';
-    link.click();
-  }
-  
-
 }

@@ -1,46 +1,54 @@
-<div class="bg-gray-900 px-4  md:px-6 lg:py-4">
-  <div class="flex flex-wrap bg-gray-900">
-    <div
-      class="w-full bg-gray-600 lg:w-6 px-4 bg-gray-900 py-4 md:px-6 lg:px-8 lg:py-4"
-    >
-      <div class="text-6xl text-white mb-3 font-medium">Harry Ore Lara</div>
-      <p class="line-height-3 mt-0 mb-7 p-0 text-white-alpha-80 text-2xl text-justify">
-        Ingeniero de sistemas con experiencia en la construcción de aplicaciones
-        web y móviles, usando frameworks de JavaScript/TypeScript como Angular,
-        ExpressJs, NestJs. Librerias como PrimeNg, Primeflex, Angular Material,
-        StencilJs y Bootstrap para la customización de componentes, y frameworks
-        móviles como Flutter. Además, poseo conocimientos en microfrontend,
-        microservicios, websockets y despliegue de aplicaciones con Docker y
-        Kubernetes en Google Cloud y Microsoft Azure, integrando prácticas de
-        CI/CD para asegurar despliegues automatizados.
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span> Angular · NestJS · Spring Boot · Cloud</p>
+      <h1 id="hero-title">Software que conecta interfaces, servicios e <span>infraestructura escalable.</span></h1>
+      <p class="hero-description">
+        Soy Harry Ore, Software Developer con mayor experiencia en frontend y
+        especialización en Angular. También desarrollo backend con NestJS y
+        Spring Boot, y despliego soluciones con Azure DevOps, Docker y Kubernetes.
       </p>
 
-      <div class="flex align-content-between justify-content-between">
-        <button
-          pButton
-          pRipple
-          routerLink="/projects"
-          label="Ver Proyectos"
-          class="bg-black-alpha-30 border-white hover:bg-white hover:text-black-alpha-90 text-2xl"
-        ></button>
+      <div class="hero-actions">
+        <a routerLink="/projects" class="button button-primary">Explorar proyectos <i class="pi pi-arrow-right"></i></a>
+        <a href="assets/cv/CV_ORE_LARA.pdf" download="Harry_Ore_Lara_CV.pdf" class="button button-secondary"><i class="pi pi-download"></i> Descargar CV</a>
+      </div>
 
-        <button
-          pButton
-          pRipple
-          (click)="descargarCV()"
-          label="Descargar CV"
-          class="bg-black-alpha-30 border-white hover:bg-white hover:text-black-alpha-90 text-2xl"
-        ></button>
+      <div class="social-links" aria-label="Perfiles profesionales">
+        <a href="https://github.com/harryorelara" target="_blank" rel="noopener noreferrer"><i class="pi pi-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/harry-ore-lara-/" target="_blank" rel="noopener noreferrer"><i class="pi pi-linkedin"></i> LinkedIn</a>
+        <span><i class="pi pi-map-marker"></i> Perú · Remoto</span>
       </div>
     </div>
 
-    <!-- <div
-        class="hidden lg:block w-4 bg-no-repeat bg-cover h-screen "
-        style="
-          background: url('assets/img/itachi.png');
-          width: 50px;
-          height: 50px;
-        "
-      ></div> -->
+    <div class="expertise-card" aria-label="Resumen de especialidad">
+      <div class="window-bar">
+        <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <small>software-profile.ts</small>
+      </div>
+      <div class="code-card" aria-hidden="true">
+        <p><span class="code-purple">const</span> developer = {{ '{' }}</p>
+        <p class="indent">focus: <span class="code-green">'Frontend + Backend'</span>,</p>
+        <p class="indent">stack: [<span class="code-green">'Angular'</span>, <span class="code-green">'NestJS'</span>, <span class="code-green">'Spring'</span>],</p>
+        <p class="indent">cloud: [<span class="code-green">'Azure'</span>, <span class="code-green">'Docker'</span>, <span class="code-green">'K8s'</span>],</p>
+        <p class="indent">mindset: <span class="code-green">'producto + calidad'</span>,</p>
+        <p class="indent">available: <span class="code-blue">true</span></p>
+        <p>{{ '}' }};</p>
+      </div>
+      <div class="capabilities">
+        <span><i class="pi pi-check-circle"></i> Arquitectura modular</span>
+        <span><i class="pi pi-check-circle"></i> Backend y microservicios</span>
+        <span><i class="pi pi-check-circle"></i> APIs REST / GraphQL</span>
+        <span><i class="pi pi-check-circle"></i> Cloud, CI/CD y contenedores</span>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="proof-bar" aria-label="Resumen profesional">
+    <div><strong>3</strong><span>productos destacados</span></div>
+    <div><strong>Angular</strong><span>especialidad principal</span></div>
+    <div><strong>3</strong><span>industrias digitalizadas</span></div>
+    <div><strong>Full stack</strong><span>de UI a infraestructura</span></div>
+  </div>
+</section>

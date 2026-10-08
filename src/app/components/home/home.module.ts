@@ -8,12 +8,14 @@ import { ButtonModule } from 'primeng/button';
 import { SectionPresentationComponent } from './section-presentation/section-presentation.component';
 import { SectionProjectsComponent } from './section-projects/section-projects.component';
 import { SkillsCardComponent } from './skills-card/skills-card.component';
+import { CertificationsSectionComponent } from './certifications-section/certifications-section.component';
 @NgModule({
   declarations: [
     HomeComponent,
     SectionPresentationComponent,
     SectionProjectsComponent,
-    SkillsCardComponent
+    SkillsCardComponent,
+    CertificationsSectionComponent
   ],
   imports: [
     CommonModule,

@@ -1,126 +1,134 @@
-<div class="bg-gray-white px-4 py-4 md:px-6 lg:px-8">
-  <div class="grid">
-    <div class="col-12 lg:col-8">
-      <img
-        attr.src="{{ project.imgs![selectedImageIndex1] }}"
-        class="mb-3 w-full"
-      />
-      <div class="grid">
-        <div *ngFor="let image of project.imgs; let i = index" class="col-3">
-          <img
-            src="{{ image }}"
-            class="w-full cursor-pointer border-2 border-round border-transparent transition-colors transition-duration-150"
-            [ngClass]="{ 'border-primary': selectedImageIndex1 === i }"
-            (click)="selectedImageIndex1 = i"
-          />
+<main class="case-page" *ngIf="project?.id">
+  <section class="case-hero" aria-labelledby="case-title">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-content">
+      <a routerLink="/projects" class="back-link">
+        <i class="pi pi-arrow-left" aria-hidden="true"></i>
+        Todos los proyectos
+      </a>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="project-labels">
+            <span>{{ project.tecnologia.name }}</span>
+            <span>{{ project.createdAt | slice:0:4 }}</span>
+            <span>{{ project.lenguaje }}</span>
+          </div>
+          <h1 id="case-title">{{ project.name }}</h1>
+          <p>{{ project.description }}</p>
         </div>
+
+        <aside class="project-summary" aria-label="Resumen del proyecto">
+          <div>
+            <small>Rol técnico</small>
+            <strong>Desarrollo end-to-end</strong>
+          </div>
+          <div>
+            <small>Stack principal</small>
+            <strong>{{ project.tecnologia.name }} · {{ project.lenguaje }}</strong>
+          </div>
+          <a
+            *ngIf="project.link"
+            [href]="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visitar producto <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </aside>
       </div>
     </div>
-    <div class="col-12 lg:col-4 lg:pl-6">
-      <div
-        class="col-12 lg:col-12 p-4 flex flex-column shadow-2 border-round"
-        style="background: rgba(255, 255, 255, 0.9)"
+  </section>
+
+  <section class="gallery-section" aria-label="Galería del proyecto">
+    <div class="main-preview">
+      <img [src]="selectedImage" [alt]="'Vista ampliada de ' + project.name" />
+      <span class="preview-caption">
+        <i class="pi pi-desktop" aria-hidden="true"></i>
+        Vista del producto
+      </span>
+    </div>
+
+    <div class="thumbnail-list" *ngIf="project.imgs?.length">
+      <button
+        type="button"
+        *ngFor="let image of project.imgs; let i = index"
+        [class.active]="selectedImageIndex === i"
+        (click)="selectImage(image, i)"
+        [attr.aria-label]="'Mostrar captura ' + (i + 1)"
+        [attr.aria-pressed]="selectedImageIndex === i"
       >
-        <div class="text-black-alpha-90 text-3xl font-bold mb-4">
-          {{ project.name }}
-        </div>
-        <p class="text-black-alpha-60 text-xl line-height-3">
-          {{ project.description }}
-        </p>
+        <img [src]="image" [alt]="'Miniatura ' + (i + 1) + ' de ' + project.name" loading="lazy" />
+        <span>0{{ i + 1 }}</span>
+      </button>
+    </div>
+  </section>
 
-        <a
-          tabindex="0"
-          class="cursor-pointer text-black-alpha-90 text-2xl font-medium mt-3 mb-2 py-3 flex justify-content-between w-full border-black-alpha-10 border-bottom-1 hover:text-black-alpha-60 transition-duration-150"
-          pStyleClass="@next"
-          enterClass="hidden"
-          enterActiveClass="slidedown"
-          leaveToClass="hidden"
-          leaveActiveClass="slideup"
-          >Impacto del sistema<i class="pi pi-fw pi-plus text-3xl"></i
-        ></a>
-        <div
-          class="overflow-hidden transition-all transition-duration-400 transition-ease-in-out"
-        >
-          <ul class="list-none">
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
-              *ngFor="let impacto of project.impacto"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >{{ impacto }}
-            </li>
-          </ul>
-        </div>
-        <a
-          tabindex="0"
-          class="cursor-pointer text-black-alpha-90 text-2xl font-medium mb-2 py-3 flex justify-content-between w-full border-black-alpha-10 border-bottom-1 hover:text-black-alpha-60 transition-duration-150"
-          pStyleClass="@next"
-          enterClass="hidden"
-          enterActiveClass="slidedown"
-          leaveToClass="hidden"
-          leaveActiveClass="slideup"
-          >Tecnologias Utilizadas<i class="pi pi-fw pi-plus text-3xl"></i
-        ></a>
-        <div
-          class="overflow-hidden hidden transition-all transition-duration-400 transition-ease-in-out"
-        >
-          <ul class="list-none">
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
-              *ngFor="let tecnologia of project.tecnologias"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >{{ tecnologia }}
-            </li>
-          </ul>
-        </div>
-        <a
-          tabindex="0"
-          class="cursor-pointer text-black-alpha-90 text-2xl font-medium mb-2 py-3 flex justify-content-between w-full border-black-alpha-10 border-bottom-1 hover:text-black-alpha-60 transition-duration-150"
-          pStyleClass="@next"
-          enterClass="hidden"
-          enterActiveClass="slidedown"
-          leaveToClass="hidden"
-          leaveActiveClass="slideup"
-          >Retos Superados<i class="pi pi-fw pi-plus text-3xl"></i
-        ></a>
-        <div
-          class="overflow-hidden hidden transition-all transition-duration-400 transition-ease-in-out"
-        >
-          <ul class="list-none">
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
-              *ngFor="let reto of project.retosSuperados"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >{{ reto }}
-            </li>
-          </ul>
-        </div>
+  <section class="case-content">
+    <div class="content-main">
+      <div class="section-heading">
+        <p>Resultados</p>
+        <h2>Impacto en el producto.</h2>
+      </div>
 
-        <a
-          tabindex="0"
-          class="cursor-pointer text-black-alpha-90 text-2xl font-medium mb-2 py-3 flex justify-content-between w-full border-black-alpha-10 border-bottom-1 hover:text-black-alpha-60 transition-duration-150"
-          pStyleClass="@next"
-          enterClass="hidden"
-          enterActiveClass="slidedown"
-          leaveToClass="hidden"
-          leaveActiveClass="slideup"
-          >Demo | Link<i class="pi pi-fw pi-plus text-3xl"></i
-        ></a>
-        <div
-          class="overflow-hidden hidden transition-all transition-duration-400 transition-ease-in-out"
-        >
-          <ul class="list-none">
-            <li
-              class="text-black-alpha-60 line-height-3 flex align-items-center mb-3"
-            >
-              <i class="pi pi-circle-fill mr-3" style="font-size: 7px"></i
-              >{{ project.link }}
-            </li>
-          </ul>
+      <ul class="impact-grid">
+        <li *ngFor="let impacto of project.impacto; let i = index">
+          <span>0{{ i + 1 }}</span>
+          <p>{{ impacto }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <aside class="stack-panel">
+      <div class="panel-heading">
+        <span><i class="pi pi-code" aria-hidden="true"></i></span>
+        <div>
+          <small>Construido con</small>
+          <h2>Stack tecnológico</h2>
         </div>
       </div>
+      <div class="technology-list">
+        <span *ngFor="let tecnologia of project.tecnologias">{{ tecnologia }}</span>
+      </div>
+      <div class="stack-meta">
+        <div>
+          <small>Lenguaje principal</small>
+          <strong>{{ project.lenguaje }}</strong>
+        </div>
+        <div *ngIf="project.database">
+          <small>Datos</small>
+          <strong>{{ project.database }}</strong>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="challenges-section" aria-labelledby="challenges-title">
+    <div class="section-heading">
+      <p>Proceso y aprendizaje</p>
+      <h2 id="challenges-title">Retos técnicos superados.</h2>
+      <span>
+        Decisiones e integraciones clave que permitieron construir una solución
+        robusta, mantenible y preparada para crecer.
+      </span>
     </div>
-  </div>
-</div>
+
+    <ol class="challenges-list">
+      <li *ngFor="let reto of project.retosSuperados; let i = index">
+        <span>0{{ i + 1 }}</span>
+        <p>{{ reto }}</p>
+        <i class="pi pi-check-circle" aria-hidden="true"></i>
+      </li>
+    </ol>
+  </section>
+
+  <section class="case-cta" aria-labelledby="case-cta-title">
+    <div>
+      <p>¿Tienes un reto similar?</p>
+      <h2 id="case-cta-title">Convirtamos tu idea en un producto sólido.</h2>
+    </div>
+    <a routerLink="/contact">
+      Hablemos de tu proyecto <i class="pi pi-arrow-right" aria-hidden="true"></i>
+    </a>
+  </section>
+</main>

@@ -1,0 +1,80 @@
+<section class="certifications-section" aria-labelledby="certifications-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Certificaciones y formación</p>
+      <h2 id="certifications-title">Aprendizaje respaldado por <span>ecosistemas líderes.</span></h2>
+    </div>
+    <p>
+      Mantengo mis conocimientos actualizados con rutas de formación y
+      certificación orientadas a cloud, desarrollo y entrega continua.
+    </p>
+  </div>
+
+  <div class="certifications-grid">
+    <article
+      class="certification-card"
+      [class.microsoft]="certification.accent === 'microsoft'"
+      [class.aws]="certification.accent === 'aws'"
+      [class.openai]="certification.accent === 'openai'"
+      [class.gcp]="certification.accent === 'gcp'"
+      *ngFor="let certification of certifications; let i = index"
+    >
+      <div class="card-topline">
+        <span class="provider-mark">{{ certification.shortName }}</span>
+        <span class="card-number">0{{ i + 1 }}</span>
+      </div>
+
+      <a
+        class="certificate-preview"
+        [href]="certification.credentialUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="'Verificar ' + certification.title"
+      >
+        <img
+          [src]="certification.imageUrl"
+          [alt]="'Certificado de ' + certification.provider"
+          loading="lazy"
+        />
+        <span>
+          Ver credencial <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
+        </span>
+      </a>
+
+      <div class="provider-copy">
+        <p>{{ certification.platform }}</p>
+        <h3>{{ certification.title }}</h3>
+        <small>{{ certification.provider }}</small>
+        <span>{{ certification.description }}</span>
+      </div>
+
+      <div class="topic-list" aria-label="Áreas de certificación">
+        <span *ngFor="let topic of certification.topics">{{ topic }}</span>
+      </div>
+
+      <a
+        class="credential-status"
+        [href]="certification.credentialUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="pi pi-verified" aria-hidden="true"></i>
+        Verificar credencial
+        <i class="pi pi-arrow-right status-arrow" aria-hidden="true"></i>
+      </a>
+    </article>
+
+    <aside class="learning-card">
+      <div class="learning-icon"><i class="pi pi-book" aria-hidden="true"></i></div>
+      <p>Siempre aprendiendo</p>
+      <h3>La tecnología cambia. Mi forma de aprender también.</h3>
+      <span>
+        Complemento la experiencia práctica con documentación oficial,
+        laboratorios y rutas de especialización.
+      </span>
+      <a routerLink="/about">
+        Ver experiencia <i class="pi pi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </aside>
+  </div>
+</section>

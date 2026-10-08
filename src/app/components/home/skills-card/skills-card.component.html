@@ -1,30 +1,22 @@
-<div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
-  <div class="shadow-2 bg-gray-900 border-round p-4">
-    <div class="flex align-items-center mb-6 justify-content-between mb-4">
-      <span class="text-4xl font-medium text-200">HABILIDADES</span>
-    </div>
-    <div class="grid">
-      <div
-        class="col-12 sm:col-6 lg:col-3 xl:col-2 p-3"
-        *ngFor="let skill of skills"
-      >
-        <div class="text-center">
-          <div
-            class="flex align-items-center justify-content-center mb-3 mx-auto"
-            style="width: 90px; height: 90px"
-          >
-            <img
-              [src]="skill.imgUrl"
-              style="width: 48; height: 48"
-            />
-          </div>
-          <span class="text-white font-medium">{{
-            skill.name | uppercase
-          }}</span>
-        </div>
-      </div>
-
-
-    </div>
+<section class="skills-section" aria-labelledby="skills-title">
+  <div class="skills-intro">
+    <p class="section-kicker">Stack y enfoque</p>
+    <h2 id="skills-title">Frontend como fortaleza.<br /><span>Backend y cloud para completar el producto.</span></h2>
+    <p>
+      Mi mayor experiencia está en Angular y TypeScript. La complemento con
+      NestJS, Spring Boot, servicios cloud, contenedores y automatización de
+      despliegues para construir soluciones de extremo a extremo.
+    </p>
+    <a routerLink="/about">Conocer mi experiencia <i class="pi pi-arrow-right"></i></a>
   </div>
-</div>
+
+  <div class="skills-grid">
+    <article class="skill" *ngFor="let skill of skills">
+      <div class="skill-icon"><img [src]="skill.imgUrl" alt="" loading="lazy" /></div>
+      <div>
+        <h3>{{ skill.name }}</h3>
+        <p>{{ skill.description }}</p>
+      </div>
+    </article>
+  </div>
+</section>

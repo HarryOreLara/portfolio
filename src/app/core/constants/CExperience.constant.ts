@@ -68,9 +68,10 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     fechaFin: new Date(),
     imgUrl:
       'https://ii.ct-stc.com/3/logos/empresas/2021/08/04/27d6edddbaa04391b12c170147004thumbnail.png',
-    puesto: 'Desarrollador Frontend',
+    puesto: 'Desarrollador de Software',
     actividades: [
       'Desarrollo e implementación del sistema principal de la empresa dedicada al rubro de cargas y encomiendas, utilizando Angular 16, PrimeNG y PrimeFlex.',
+      'Desarrollo y mantenimiento de servicios backend con NestJS y Spring Boot, aplicando APIs REST y arquitecturas orientadas a servicios.',
       'Personalización y modularización de componentes reutilizables mediante StencilJS, mejorando la consistencia visual y la escalabilidad del sistema.',
       'Consumo de servicios mediante API REST y  GraphQL para una gestión eficiente de datos',
       'Uso intensivo de RxJS para manejar flujos de datos asincrónicos, combinaciones de streams, y lógica reactiva compleja en servicios y componentes.',
@@ -84,11 +85,14 @@ export const CEXPERIENCE_CONSTANT: IExperience[] = [
     ],
     tecnologias: [
       'Angular',
+      'NestJS',
+      'Spring Boot',
       'JavaScript',
       'TypeScript',
       'HTML',
       'CSS',
       'Google Cloud',
+      'Azure DevOps',
       'Docker',
       'Kubernetes',
       'CI/CD',

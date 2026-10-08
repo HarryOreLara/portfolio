@@ -1,0 +1,69 @@
+:host { display: block; }
+.contact-page { position: relative; min-height: calc(100vh - 76px); display: grid; align-items: center; overflow: hidden; padding: 80px 24px; background: linear-gradient(rgba(117, 167, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(117, 167, 255, .035) 1px, transparent 1px); background-size: 42px 42px; }
+.contact-glow { position: absolute; border-radius: 50%; filter: blur(110px); pointer-events: none; }
+.contact-glow-primary { width: 540px; height: 540px; top: -300px; right: 4%; background: rgba(57, 217, 179, .13); }
+.contact-glow-secondary { width: 420px; height: 420px; bottom: -300px; left: -100px; background: rgba(117, 167, 255, .1); }
+.contact-shell { position: relative; z-index: 1; width: 100%; max-width: var(--content-width); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, .82fr); align-items: center; gap: clamp(48px, 7vw, 96px); }
+.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--primary); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.eyebrow span { width: 28px; height: 2px; background: var(--primary); }
+h1 { max-width: 700px; margin: 0; color: var(--text); font-size: clamp(3rem, 5.4vw, 5rem); line-height: 1; letter-spacing: -.055em; }
+h1 span { display: block; color: transparent; background: linear-gradient(100deg, var(--primary), #8ad7ff); background-clip: text; -webkit-background-clip: text; }
+.contact-description { max-width: 650px; margin: 28px 0 0; color: var(--text-muted); font-size: 1.08rem; line-height: 1.75; }
+.availability { width: fit-content; display: flex; align-items: center; gap: 14px; margin-top: 34px; padding: 14px 18px; border: 1px solid rgba(57, 217, 179, .2); border-radius: 12px; background: rgba(13, 27, 45, .68); }
+.availability-dot { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 6px rgba(57, 217, 179, .12); }
+.availability div, .contact-details span, .email-copy, .social-grid span { display: grid; }
+.availability strong { color: var(--text); font-size: .9rem; }
+.availability div span { margin-top: 3px; color: var(--text-muted); font-size: .76rem; }
+.contact-details { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 35px; }
+.contact-details > div { display: flex; align-items: center; gap: 12px; }
+.contact-details i { color: var(--primary); font-size: 1.1rem; }
+.contact-details small { color: var(--text-muted); font-size: .72rem; }
+.contact-details strong { margin-top: 3px; color: var(--text); font-size: .84rem; }
+.contact-panel { position: relative; padding: clamp(26px, 4vw, 38px); border: 1px solid rgba(117, 167, 255, .2); border-radius: 20px; background: rgba(9, 21, 37, .92); box-shadow: 0 30px 80px rgba(0, 0, 0, .38); }
+.contact-panel::before { content: ""; position: absolute; top: 0; left: 38px; right: 38px; height: 1px; background: linear-gradient(90deg, transparent, var(--primary), transparent); }
+.panel-header { display: flex; align-items: center; gap: 15px; }
+.panel-icon, .email-icon { display: grid; place-items: center; flex: 0 0 auto; }
+.panel-icon { width: 48px; height: 48px; border-radius: 13px; background: rgba(57, 217, 179, .12); color: var(--primary); font-size: 1.15rem; }
+.panel-header p { margin: 0 0 4px; color: var(--primary); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.panel-header h2 { margin: 0; color: var(--text); font-size: 1.35rem; letter-spacing: -.025em; }
+.panel-copy { margin: 23px 0; color: var(--text-muted); font-size: .9rem; line-height: 1.65; }
+.email-card { display: flex; align-items: center; gap: 14px; padding: 16px; border: 1px solid rgba(57, 217, 179, .24); border-radius: 13px; background: rgba(57, 217, 179, .07); transition: transform 160ms ease, border-color 160ms ease, background 160ms ease; }
+.email-card:hover { transform: translateY(-2px); border-color: rgba(57, 217, 179, .55); background: rgba(57, 217, 179, .11); }
+.email-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--primary); color: var(--primary-dark); }
+.email-copy { min-width: 0; gap: 3px; }
+.email-copy small { color: var(--text-muted); font-size: .72rem; }
+.email-copy strong { overflow: hidden; color: var(--text); font-size: .9rem; text-overflow: ellipsis; }
+.email-arrow, .link-arrow { margin-left: auto; color: var(--primary); font-size: .85rem; }
+.divider { display: flex; align-items: center; gap: 14px; margin: 25px 0 17px; color: var(--text-muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.social-grid { display: grid; gap: 10px; }
+.social-grid a { display: flex; align-items: center; gap: 13px; padding: 13px 14px; border: 1px solid var(--border); border-radius: 11px; color: var(--text-muted); transition: color 160ms ease, border-color 160ms ease, background 160ms ease; }
+.social-grid a:hover { border-color: rgba(117, 167, 255, .34); background: rgba(255, 255, 255, .035); color: var(--primary); }
+.social-grid > a > i:first-child { width: 22px; font-size: 1.15rem; text-align: center; }
+.social-grid span { gap: 2px; }
+.social-grid strong { color: var(--text); font-size: .86rem; }
+.social-grid small { font-size: .7rem; }
+.privacy-note { display: flex; align-items: flex-start; gap: 8px; margin: 22px 0 0; color: #77869a; font-size: .68rem; line-height: 1.5; }
+.privacy-note i { margin-top: 2px; font-size: .65rem; }
+
+@media (max-width: 960px) {
+  .contact-page { align-items: start; padding-top: 68px; }
+  .contact-shell { grid-template-columns: 1fr; gap: 52px; }
+  .contact-intro { max-width: 720px; }
+  .contact-panel { width: 100%; max-width: 680px; }
+}
+
+@media (max-width: 640px) {
+  .contact-page { min-height: calc(100vh - 68px); padding: 52px 18px; }
+  h1 { font-size: clamp(2.65rem, 14vw, 4rem); }
+  .contact-description { font-size: 1rem; }
+  .availability { width: 100%; }
+  .contact-details { display: grid; gap: 18px; }
+  .contact-panel { padding: 25px 20px; border-radius: 17px; }
+  .panel-header h2 { font-size: 1.15rem; }
+  .email-card { padding: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .email-card, .social-grid a { transition: none; }
+}

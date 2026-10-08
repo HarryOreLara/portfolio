@@ -1,109 +1,128 @@
-<div class="bg-gray-white px-2 py-8 md:px-4 lg:px-4 overflow-hidden">
-  <div class="font-bold text-white text-7xl mb-3 text-center">
-    Mi Experiencia
-  </div>
-  <div class="text-400 text-xl text-center mb-6 line-height-3">
-    En el sector de desarrollo en multiples empresas
-  </div>
+<main class="experience-page">
+  <section class="experience-hero" aria-labelledby="experience-title">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Trayectoria profesional</p>
+        <h1 id="experience-title">
+          Experiencia construyendo
+          <span>productos que evolucionan.</span>
+        </h1>
+        <p>
+          He trabajado en equipos y productos de educación digital, transporte
+          y logística, transformando procesos complejos en soluciones web
+          escalables y fáciles de usar.
+        </p>
 
-  <!-- Iteramos sobre todas las experiencias -->
-  <ng-container *ngFor="let experience of experiencias; let i = index">
-    <!-- Para IDs impares (índices pares) -->
-    <div
-      *ngIf="experience.id % 2 !== 0"
-      class="flex lg:justify-content-center mb-5"
-    >
-      <div class="py-3 pr-8 pl-3 w-30rem hidden lg:block">
-        <img [src]="experience.imgUrl" alt="Logo empresa" class="w-full mr-8" />
-      </div>
-      <div class="flex flex-column align-items-center w-2rem">
-        <span
-          class="bg-yellow-500 text-0 flex align-items-center justify-content-center border-circle"
-          style="min-width: 2.5rem; min-height: 2.5rem"
-          >{{ i + 1 }}</span
-        >
-        <div
-          class="h-full bg-yellow-500"
-          style="width: 2px; min-height: 4rem"
-        ></div>
-      </div>
-      <div class="py-3 pl-5 lg:pl-8 pl-3 lg:w-30rem">
-        <div class="text-white text-3xl mb-2 font-medium">
-          {{ experience.empresa }}
+        <div class="hero-actions">
+          <a class="primary-action" href="assets/cv/CV_ORE_LARA.pdf" target="_blank" rel="noopener noreferrer">
+            <i class="pi pi-file-pdf" aria-hidden="true"></i>
+            Ver currículum
+          </a>
+          <a class="secondary-action" routerLink="/contact">
+            Conversemos <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
+          </a>
         </div>
-        <span class="block text-yellow-500 line-height-3 mb-3">{{
-          experience.descripcion
-        }}</span>
-        <span class="block text-green-500 line-height-3 mb-3">{{
-          (experience.fechaInicio | date : "dd/MM/yyyy" : "UTC-05:00") +
-            " - " +
-            (experience.fechaFin | date : "dd/MM/yyyy" : "UTC-05:00")
-        }}</span>
-        <div class="pt-3 border-top-1 border-300">
-          <div
-            class="mb-3 line-height-3 text-justify"
-            *ngFor="let actividad of experience.actividades"
-          >
-            <span class="text-white font-medium">{{ actividad }}</span>
+      </div>
+
+      <aside class="career-summary" aria-label="Resumen de experiencia">
+        <div class="summary-header">
+          <span class="status-dot" aria-hidden="true"></span>
+          Experiencia en curso
+        </div>
+        <div class="summary-grid">
+          <div>
+            <strong>03</strong>
+            <span>Empresas</span>
+          </div>
+          <div>
+            <strong>2023</strong>
+            <span>Inicio profesional</span>
+          </div>
+          <div>
+            <strong>Web + Cloud</strong>
+            <span>Enfoque técnico</span>
+          </div>
+          <div>
+            <strong>End-to-end</strong>
+            <span>Alcance de desarrollo</span>
           </div>
         </div>
-        <img
-          [src]="experience.imgUrl"
-          alt="Logo empresa"
-          class="w-full mt-3 block lg:hidden"
-        />
+      </aside>
+    </div>
+  </section>
+
+  <section class="journey-section" aria-labelledby="journey-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">Mi recorrido</p>
+        <h2 id="journey-title">Experiencia que suma contexto.</h2>
       </div>
+      <p>
+        Cada etapa representa nuevos retos, más responsabilidad y una visión
+        más completa sobre cómo construir software útil para las personas.
+      </p>
     </div>
 
-    <!-- Para IDs pares (índices impares) -->
-    <div
-      *ngIf="experience.id % 2 === 0"
-      class="flex lg:justify-content-center mb-5"
-    >
-      <div
-        class="py-3 pl-5 pr-3 lg:pr-8 lg:pl-3 lg:w-30rem flex-order-1 lg:flex-order-0"
-      >
-        <div class="text-white text-3xl mb-2 font-medium">
-          {{ experience.empresa }}
+    <div class="timeline">
+      <article class="experience-card" *ngFor="let experience of experiencias; let i = index">
+        <div class="timeline-marker" aria-hidden="true">
+          <span>0{{ i + 1 }}</span>
         </div>
-        <span class="block text-blue-500 line-height-3 mb-3">{{
-          experience.descripcion
-        }}</span>
-        <span class="block text-green-500 line-height-3 mb-3">{{
-          (experience.fechaInicio | date : "dd/MM/yyyy" : "UTC-05:00") +
-            " - " +
-            (experience.fechaFin | date : "dd/MM/yyyy" : "UTC-05:00")
-        }}</span>
-        <div class="pt-3 border-top-1 border-300">
-          <div
-            class="mb-3 line-height-3 text-justify"
-            *ngFor="let actividad of experience.actividades"
-          >
-            <span class="text-white font-medium">{{ actividad }}</span>
+
+        <div class="card-shell">
+          <header class="card-header">
+            <div class="company-logo">
+              <img [src]="experience.imgUrl" [alt]="'Logo de ' + experience.empresa" loading="lazy" />
+            </div>
+
+            <div class="company-heading">
+              <p>{{ experience.rubro }}</p>
+              <h3>{{ experience.empresa }}</h3>
+              <strong>{{ experience.puesto }}</strong>
+            </div>
+
+            <div class="experience-date">
+              <i class="pi pi-calendar" aria-hidden="true"></i>
+              <span>
+                {{ experience.fechaInicio | date : "MM/yyyy" : "UTC-05:00" }}
+                — Actualidad
+              </span>
+            </div>
+          </header>
+
+          <p class="company-description">{{ experience.descripcion }}</p>
+
+          <div class="card-divider"></div>
+
+          <div class="responsibilities">
+            <p class="content-label">Contribuciones principales</p>
+            <ul>
+              <li *ngFor="let actividad of experience.actividades">
+                <i class="pi pi-check" aria-hidden="true"></i>
+                <span>{{ actividad }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="technology-block" *ngIf="experience.tecnologias?.length">
+            <p class="content-label">Tecnologías utilizadas</p>
+            <div class="technology-list">
+              <span *ngFor="let tecnologia of experience.tecnologias">{{ tecnologia }}</span>
+            </div>
           </div>
         </div>
-        <img
-          [src]="experience.imgUrl"
-          alt="Logo empresa"
-          class="w-full mt-3 block lg:hidden"
-        />
-      </div>
-      <div
-        class="flex flex-column align-items-center w-2rem flex-order-0 lg:flex-order-1"
-      >
-        <span
-          class="bg-blue-500 text-0 flex align-items-center justify-content-center border-circle"
-          style="min-width: 2.5rem; min-height: 2.5rem"
-          >{{ i + 1 }}</span
-        >
-        <div
-          class="h-full bg-blue-500"
-          style="width: 2px; min-height: 4rem"
-        ></div>
-      </div>
-      <div class="py-3 pl-8 pr-3 w-30rem hidden lg:block flex-order-2">
-        <img [src]="experience.imgUrl" alt="Logo empresa" class="w-full mr-8" />
-      </div>
+      </article>
     </div>
-  </ng-container>
-</div>
+  </section>
+
+  <section class="experience-cta" aria-labelledby="experience-cta-title">
+    <div>
+      <p>El siguiente reto</p>
+      <h2 id="experience-cta-title">¿Construimos algo valioso juntos?</h2>
+    </div>
+    <a routerLink="/contact">
+      Hablemos de tu proyecto <i class="pi pi-arrow-right" aria-hidden="true"></i>
+    </a>
+  </section>
+</main>

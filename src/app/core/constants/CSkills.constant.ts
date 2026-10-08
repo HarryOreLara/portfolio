@@ -137,4 +137,28 @@ export const CSKILLS_CONSTANT: ISkill[] = [
     imgUrl: 'assets/skills/tailwindcss.svg',
     type: TypeSkillEnum.LIBRERIA
   },
+  {
+    id: 18,
+    name: 'Spring Boot',
+    description:
+      'Framework Java para desarrollar APIs, microservicios y aplicaciones backend robustas.',
+    imgUrl: 'assets/skills/spring_boot.svg',
+    type: TypeSkillEnum.BACKEND
+  },
+  {
+    id: 19,
+    name: 'Kubernetes',
+    description:
+      'Orquestación de contenedores para desplegar y escalar aplicaciones de forma confiable.',
+    imgUrl: 'assets/skills/kubernetes.svg',
+    type: TypeSkillEnum.DEVOPS
+  },
+  {
+    id: 20,
+    name: 'Azure DevOps',
+    description:
+      'Automatización de integración, entrega continua y gestión del ciclo de desarrollo.',
+    imgUrl: 'assets/skills/azure_devops.svg',
+    type: TypeSkillEnum.DEVOPS
+  },
 ];

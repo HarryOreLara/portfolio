@@ -1,79 +1,64 @@
-<div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
-  <div class="grid -mt-3 -ml-3 -mr-3">
-    <div class="col-12 md:col-6 xl:col-3">
-      <div
-        class="p-2 h-full mt-2"
-        style="
-          background: url('assets/img/fondo_filtro.webp')
-            no-repeat;
-          border-radius: 50px;
-          background-size: cover;
-        "
-      >
-        <div class="py-5 px-4">
-          <span class="text-2xl font-bold text-white mb-3 ml-3"
-            >DESARROLLO</span
-          >
-          <ul class="list-none p-0 mt-3 mb-0 mx-0">
-            <li class="mb-2" *ngFor="let item of menuItems | filterTypeSkill  ; let i = index">
-              <a
-                tabindex="0"
-                (click)="selectAnotherProject(item)"
-                [ngClass]="{ 'active-item': selectedItem === item.id }"
-                class="block cursor-pointer text-xl text-white-alpha-70 font-medium px-3 py-2 bg-transparent hover:bg-white-alpha-30 transition-colors transition-duration-150 border-round"
-                >{{ item.name }}</a
-              >
-            </li>
-          </ul>
-
-          <div
-            class="flex align-content-center justify-content-center mt-6 align-items-center align-self-center"
-          >
-            <!-- <p-button
-              type="button"
-              icon="pi pi-chevron-left"
-              (click)="prev()"
-              styleClass="p-button-text text-white font-bold text-2xl"
-            /> -->
-            <p-button
-              type="button"
-              icon="pi pi-refresh"
-              (click)="reset()"
-              styleClass="p-button-text text-white font-bold text-2xl"
-            />
-            <!-- <p-button
-              type="button"
-              icon="pi pi-chevron-right"
-              (click)="next()"
-              styleClass="p-button-text text-white font-bold text-2xl"
-            /> -->
-          </div>
-        </div>
-      </div>
+<section class="filter-section" aria-labelledby="filter-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Explora por tecnología</p>
+      <h2 id="filter-title">Proyectos según el stack.</h2>
+      <p>Selecciona una tecnología para descubrir los casos desarrollados con ella.</p>
     </div>
 
-    <div
-      class="col-12 md:col-6 xl:col-3 mb-5 md:mb-0"
-      *ngFor="let project of projects"
-    >
-      <div class="p-2  cursor-pointer" (click)="goToProject(project)">
-        <img [src]="project.imgUrl" class="w-full mb-3 border-round-2xl" />
-        <div class="flex justify-content-end mb-3">
-          <span>
-            <i class="pi pi-star-fill text-yellow-500 mr-1"></i>
-            <i class="pi pi-star-fill text-yellow-500 mr-1"></i>
-            <i class="pi pi-star-fill text-yellow-500 mr-1"></i>
-            <i class="pi pi-star-fill text-yellow-500 mr-1"></i>
-            <i class="pi pi-star-fill text-300"></i>
-          </span>
-        </div>
-        <div class="text-white text-xl mb-3">{{ project.name }}</div>
-        <div>
-          <span class="text-xl font-medium text-white-alpha-40">{{
-            project.description
-          }}</span>
-        </div>
-      </div>
-    </div>
+    <button type="button" class="reset-button" (click)="reset()">
+      <i class="pi pi-refresh" aria-hidden="true"></i>
+      Restablecer
+    </button>
   </div>
-</div>
+
+  <div class="technology-filter" role="group" aria-label="Filtrar proyectos por tecnología">
+    <button
+      type="button"
+      *ngFor="let item of menuItems | filterTypeSkill"
+      (click)="selectAnotherProject(item)"
+      [class.active-item]="selectedItem === item.id"
+      [attr.aria-pressed]="selectedItem === item.id"
+    >
+      <img [src]="item.imgUrl" alt="" aria-hidden="true" />
+      {{ item.name }}
+    </button>
+  </div>
+
+  <div class="filtered-grid" *ngIf="projects.length; else emptyProjects">
+    <article class="filtered-card" *ngFor="let project of projects; let i = index">
+      <button
+        type="button"
+        class="card-link"
+        (click)="goToProject(project)"
+        [attr.aria-label]="'Ver caso de estudio: ' + project.name"
+      >
+        <span class="project-image">
+          <img [src]="project.imgUrl" [alt]="'Vista previa de ' + project.name" loading="lazy" />
+          <span class="project-index">0{{ i + 1 }}</span>
+        </span>
+        <span class="project-content">
+          <span class="project-meta">
+            <span>{{ project.tecnologia.name }}</span>
+            <span>{{ project.createdAt | slice:0:4 }}</span>
+          </span>
+          <strong>{{ project.name }}</strong>
+          <span class="project-description">{{ project.description }}</span>
+          <span class="project-cta">
+            Ver caso de estudio <i class="pi pi-arrow-up-right" aria-hidden="true"></i>
+          </span>
+        </span>
+      </button>
+    </article>
+  </div>
+
+  <ng-template #emptyProjects>
+    <div class="empty-state">
+      <span><i class="pi pi-folder-open" aria-hidden="true"></i></span>
+      <div>
+        <h3>Aún no hay un caso publicado con esta tecnología.</h3>
+        <p>Prueba seleccionando Angular o restablece el filtro para continuar explorando.</p>
+      </div>
+    </div>
+  </ng-template>
+</section>

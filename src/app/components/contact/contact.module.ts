@@ -3,25 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
-import { ButtonModule } from 'primeng/button';
-import{CheckboxModule} from 'primeng/checkbox'
-import {DividerModule} from 'primeng/divider'
-import { InputTextModule } from 'primeng/inputtext';
-import { DropdownModule } from 'primeng/dropdown';
-import { CarouselModule } from 'primeng/carousel';
+
 @NgModule({
-  declarations: [
-    ContactComponent
-  ],
+  declarations: [ContactComponent],
   imports: [
     CommonModule,
-    ContactRoutingModule,
-    CheckboxModule,
-    ButtonModule,
-    DividerModule,
-    InputTextModule,
-    DropdownModule,
-    CarouselModule
-  ]
+    ContactRoutingModule
+  ],
 })
-export class ContactModule { }
+export class ContactModule {}
