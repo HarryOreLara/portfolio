@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="86" height="86" role="img" aria-label="Azure DevOps">
+  <path d="M8 12.5 21.5 5v7.2L14 14.5v18.8l7.5 2.4V43L8 35.5V12.5Z" fill="#0078D4"/>
+  <path d="m21.5 12.2 18.5-4v31.3L21.5 43v-7.3l11-2.4V15.7l-11 2.5v-6Z" fill="#2496ED"/>
+  <path d="m14 14.5 18.5 1.2v17.6L14 33.3V14.5Z" fill="#0067B8"/>
+  <path d="m21.5 18.2 11-2.5v17.6l-11 2.4V18.2Z" fill="#5EA0EF"/>
+</svg>

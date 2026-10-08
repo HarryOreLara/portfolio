@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Marcador para certificado de Microsoft</title>
+  <desc id="desc">Reemplaza este archivo por la imagen de tu certificado.</desc>
+  <rect width="800" height="500" fill="#f7f9fc"/>
+  <rect x="20" y="20" width="760" height="460" rx="12" fill="none" stroke="#dce4ee" stroke-width="2"/>
+  <g transform="translate(70 70)">
+    <rect width="34" height="34" fill="#f25022"/><rect x="40" width="34" height="34" fill="#7fba00"/>
+    <rect y="40" width="34" height="34" fill="#00a4ef"/><rect x="40" y="40" width="34" height="34" fill="#ffb900"/>
+  </g>
+  <text x="70" y="210" fill="#17253a" font-family="Arial, sans-serif" font-size="38" font-weight="700">Certificación Microsoft</text>
+  <text x="70" y="258" fill="#64748b" font-family="Arial, sans-serif" font-size="20">Reemplaza esta imagen con tu certificado</text>
+  <line x1="70" y1="315" x2="730" y2="315" stroke="#dce4ee" stroke-width="2"/>
+  <text x="70" y="370" fill="#0078d4" font-family="Arial, sans-serif" font-size="18" font-weight="700">MICROSOFT LEARN</text>
+</svg>
